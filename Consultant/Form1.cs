@@ -27,6 +27,7 @@ namespace Consultant
                     gbPkg.Visible = true;
                     gbConclusion.Visible = true;
                     break;
+                    //добавить значение домена
                 case 1:
                     gbVarOrDomain.Visible = true;
                     gbVarOrDomain.Text = "Текст вопроса";
@@ -40,6 +41,12 @@ namespace Consultant
                     gbConclusion.Visible = false;
                     break;
             }
+        }
+
+        private void начатьКонсультациюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Consultation consultation = new Consultation();
+            consultation.Show();
         }
     }
 }

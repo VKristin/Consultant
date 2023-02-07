@@ -10,3 +10,17 @@ D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultan
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.exe
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.pdb
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomen.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin\Debug\Consultant.exe.config
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin\Debug\Consultant.exe
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin\Debug\Consultant.pdb
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Consultation.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomen.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Explanation.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Consultant.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Properties.Resources.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.GenerateResource.cache
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.exe
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.pdb

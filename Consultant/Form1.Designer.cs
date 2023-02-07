@@ -30,22 +30,19 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.консультацяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьКакToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.консультацяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.начатьКонсультациюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.показатьОбъяснениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpRools = new System.Windows.Forms.TabPage();
             this.tpVars = new System.Windows.Forms.TabPage();
             this.tpDomens = new System.Windows.Forms.TabPage();
-            this.dgvRules = new System.Windows.Forms.DataGridView();
-            this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -56,34 +53,35 @@
             this.gbVarOrDomain = new System.Windows.Forms.GroupBox();
             this.lvVarOrDomain = new System.Windows.Forms.ListView();
             this.gbPkg = new System.Windows.Forms.GroupBox();
-            this.dgvVars = new System.Windows.Forms.DataGridView();
-            this.dgvColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvColumnType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvColumnDomain = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lvRules = new System.Windows.Forms.ListView();
+            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvVars = new System.Windows.Forms.ListView();
+            this.varName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.varType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.varDomain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpRools.SuspendLayout();
             this.tpVars.SuspendLayout();
             this.tpDomens.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRules)).BeginInit();
             this.gbEdit.SuspendLayout();
             this.gbConclusion.SuspendLayout();
             this.gbVarOrDomain.SuspendLayout();
             this.gbPkg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVars)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
             this.консультацяToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1187, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1188, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -100,6 +98,41 @@
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
+            // новыйToolStripMenuItem
+            // 
+            this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
+            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.новыйToolStripMenuItem.Text = "Новый";
+            // 
+            // открытьToolStripMenuItem
+            // 
+            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.открытьToolStripMenuItem.Text = "Открыть";
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            // 
+            // сохранитьКакToolStripMenuItem
+            // 
+            this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            // 
             // консультацяToolStripMenuItem
             // 
             this.консультацяToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -109,46 +142,12 @@
             this.консультацяToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.консультацяToolStripMenuItem.Text = "Консультация";
             // 
-            // новыйToolStripMenuItem
-            // 
-            this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
-            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.новыйToolStripMenuItem.Text = "Новый";
-            // 
-            // открытьToolStripMenuItem
-            // 
-            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.открытьToolStripMenuItem.Text = "Открыть";
-            // 
-            // сохранитьToolStripMenuItem
-            // 
-            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьToolStripMenuItem.Text = "Сохранить";
-            // 
-            // сохранитьКакToolStripMenuItem
-            // 
-            this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
-            // 
-            // выходToolStripMenuItem
-            // 
-            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.выходToolStripMenuItem.Text = "Выход";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
-            // 
             // начатьКонсультациюToolStripMenuItem
             // 
             this.начатьКонсультациюToolStripMenuItem.Name = "начатьКонсультациюToolStripMenuItem";
             this.начатьКонсультациюToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.начатьКонсультациюToolStripMenuItem.Text = "Начать консультацию";
+            this.начатьКонсультациюToolStripMenuItem.Click += new System.EventHandler(this.начатьКонсультациюToolStripMenuItem_Click);
             // 
             // показатьОбъяснениеToolStripMenuItem
             // 
@@ -165,72 +164,41 @@
             this.tabControl.Location = new System.Drawing.Point(0, 24);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(764, 680);
+            this.tabControl.Size = new System.Drawing.Size(753, 680);
             this.tabControl.TabIndex = 1;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
             // tpRools
             // 
-            this.tpRools.Controls.Add(this.dgvRules);
+            this.tpRools.Controls.Add(this.lvRules);
             this.tpRools.Location = new System.Drawing.Point(4, 22);
             this.tpRools.Name = "tpRools";
             this.tpRools.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRools.Size = new System.Drawing.Size(756, 654);
+            this.tpRools.Size = new System.Drawing.Size(745, 654);
             this.tpRools.TabIndex = 0;
             this.tpRools.Text = "Правила";
             this.tpRools.UseVisualStyleBackColor = true;
             // 
             // tpVars
             // 
-            this.tpVars.Controls.Add(this.dgvVars);
+            this.tpVars.Controls.Add(this.lvVars);
             this.tpVars.Location = new System.Drawing.Point(4, 22);
             this.tpVars.Name = "tpVars";
             this.tpVars.Padding = new System.Windows.Forms.Padding(3);
-            this.tpVars.Size = new System.Drawing.Size(756, 654);
+            this.tpVars.Size = new System.Drawing.Size(745, 654);
             this.tpVars.TabIndex = 1;
             this.tpVars.Text = "Переменные";
             this.tpVars.UseVisualStyleBackColor = true;
             // 
             // tpDomens
             // 
-            this.tpDomens.Controls.Add(this.dataGridView1);
+            this.tpDomens.Controls.Add(this.listView1);
             this.tpDomens.Location = new System.Drawing.Point(4, 22);
             this.tpDomens.Name = "tpDomens";
-            this.tpDomens.Size = new System.Drawing.Size(756, 654);
+            this.tpDomens.Size = new System.Drawing.Size(745, 654);
             this.tpDomens.TabIndex = 2;
             this.tpDomens.Text = "Домены";
             this.tpDomens.UseVisualStyleBackColor = true;
-            // 
-            // dgvRules
-            // 
-            this.dgvRules.AllowUserToAddRows = false;
-            this.dgvRules.AllowUserToDeleteRows = false;
-            this.dgvRules.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvRules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRules.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnName,
-            this.columnDescription});
-            this.dgvRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRules.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvRules.Location = new System.Drawing.Point(3, 3);
-            this.dgvRules.Name = "dgvRules";
-            this.dgvRules.ReadOnly = true;
-            this.dgvRules.RowHeadersVisible = false;
-            this.dgvRules.Size = new System.Drawing.Size(750, 648);
-            this.dgvRules.TabIndex = 0;
-            // 
-            // columnName
-            // 
-            this.columnName.HeaderText = "Имя";
-            this.columnName.Name = "columnName";
-            this.columnName.ReadOnly = true;
-            // 
-            // columnDescription
-            // 
-            this.columnDescription.HeaderText = "Описание";
-            this.columnDescription.Name = "columnDescription";
-            this.columnDescription.ReadOnly = true;
-            this.columnDescription.Width = 500;
             // 
             // btnAdd
             // 
@@ -336,74 +304,75 @@
             this.gbPkg.TabStop = false;
             this.gbPkg.Text = "Посылка";
             // 
-            // dgvVars
+            // lvRules
             // 
-            this.dgvVars.AllowUserToAddRows = false;
-            this.dgvVars.AllowUserToDeleteRows = false;
-            this.dgvVars.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvVars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVars.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvColumnName,
-            this.dgvColumnType,
-            this.dgvColumnDomain});
-            this.dgvVars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVars.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvVars.Location = new System.Drawing.Point(3, 3);
-            this.dgvVars.Name = "dgvVars";
-            this.dgvVars.ReadOnly = true;
-            this.dgvVars.RowHeadersVisible = false;
-            this.dgvVars.Size = new System.Drawing.Size(750, 648);
-            this.dgvVars.TabIndex = 1;
+            this.lvRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Name,
+            this.Description});
+            this.lvRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvRules.HideSelection = false;
+            this.lvRules.Location = new System.Drawing.Point(3, 3);
+            this.lvRules.Name = "lvRules";
+            this.lvRules.Size = new System.Drawing.Size(739, 648);
+            this.lvRules.TabIndex = 0;
+            this.lvRules.UseCompatibleStateImageBehavior = false;
+            this.lvRules.View = System.Windows.Forms.View.Details;
             // 
-            // dgvColumnName
+            // Name
             // 
-            this.dgvColumnName.HeaderText = "Имя";
-            this.dgvColumnName.Name = "dgvColumnName";
-            this.dgvColumnName.ReadOnly = true;
+            this.Name.Text = "Имя";
+            this.Name.Width = 325;
             // 
-            // dgvColumnType
+            // Description
             // 
-            this.dgvColumnType.HeaderText = "Тип";
-            this.dgvColumnType.Name = "dgvColumnType";
-            this.dgvColumnType.ReadOnly = true;
-            this.dgvColumnType.Width = 200;
+            this.Description.Text = "Описание";
+            this.Description.Width = 311;
             // 
-            // dgvColumnDomain
+            // lvVars
             // 
-            this.dgvColumnDomain.HeaderText = "Домен";
-            this.dgvColumnDomain.Name = "dgvColumnDomain";
-            this.dgvColumnDomain.ReadOnly = true;
-            this.dgvColumnDomain.Width = 300;
+            this.lvVars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.varName,
+            this.varType,
+            this.varDomain});
+            this.lvVars.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvVars.HideSelection = false;
+            this.lvVars.Location = new System.Drawing.Point(3, 3);
+            this.lvVars.Name = "lvVars";
+            this.lvVars.Size = new System.Drawing.Size(739, 648);
+            this.lvVars.TabIndex = 0;
+            this.lvVars.UseCompatibleStateImageBehavior = false;
+            this.lvVars.View = System.Windows.Forms.View.Details;
             // 
-            // dataGridView1
+            // varName
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 654);
-            this.dataGridView1.TabIndex = 2;
+            this.varName.Text = "Имя";
+            this.varName.Width = 236;
             // 
-            // dataGridViewTextBoxColumn1
+            // varType
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 700;
+            this.varType.Text = "Тип";
+            this.varType.Width = 199;
+            // 
+            // varDomain
+            // 
+            this.varDomain.Text = "Домен";
+            this.varDomain.Width = 287;
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(0, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(745, 654);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // Consultant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1187, 704);
+            this.ClientSize = new System.Drawing.Size(1188, 704);
             this.Controls.Add(this.gbVarOrDomain);
             this.Controls.Add(this.gbConclusion);
             this.Controls.Add(this.gbPkg);
@@ -419,13 +388,10 @@
             this.tpRools.ResumeLayout(false);
             this.tpVars.ResumeLayout(false);
             this.tpDomens.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRules)).EndInit();
             this.gbEdit.ResumeLayout(false);
             this.gbConclusion.ResumeLayout(false);
             this.gbVarOrDomain.ResumeLayout(false);
             this.gbPkg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVars)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,11 +412,8 @@
         private System.Windows.Forms.ToolStripMenuItem показатьОбъяснениеToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tpRools;
-        private System.Windows.Forms.DataGridView dgvRules;
         private System.Windows.Forms.TabPage tpVars;
         private System.Windows.Forms.TabPage tpDomens;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnDescription;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
@@ -461,12 +424,14 @@
         private System.Windows.Forms.ListView lvVarOrDomain;
         private System.Windows.Forms.ListView lvPkg;
         private System.Windows.Forms.GroupBox gbPkg;
-        private System.Windows.Forms.DataGridView dgvVars;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnType;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvColumnDomain;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.ListView lvRules;
+        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader Description;
+        private System.Windows.Forms.ListView lvVars;
+        private System.Windows.Forms.ColumnHeader varName;
+        private System.Windows.Forms.ColumnHeader varType;
+        private System.Windows.Forms.ColumnHeader varDomain;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
