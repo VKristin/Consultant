@@ -48,5 +48,11 @@ namespace Consultant
             Consultation consultation = new Consultation();
             consultation.Show();
         }
+
+        private void показатьОбъяснениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Explanation explanation = new Explanation();
+            explanation.Show();
+        }
     }
 }

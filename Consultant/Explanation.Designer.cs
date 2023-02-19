@@ -29,55 +29,69 @@
         private void InitializeComponent()
         {
             this.tvExplanation = new System.Windows.Forms.TreeView();
-            this.dgvExplanation = new System.Windows.Forms.DataGridView();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExplanation)).BeginInit();
+            this.splitter2 = new System.Windows.Forms.Splitter();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.splitter3 = new System.Windows.Forms.Splitter();
             this.SuspendLayout();
             // 
             // tvExplanation
             // 
             this.tvExplanation.Dock = System.Windows.Forms.DockStyle.Left;
             this.tvExplanation.Location = new System.Drawing.Point(0, 0);
-            this.tvExplanation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tvExplanation.Name = "tvExplanation";
-            this.tvExplanation.Size = new System.Drawing.Size(517, 332);
+            this.tvExplanation.Size = new System.Drawing.Size(389, 270);
             this.tvExplanation.TabIndex = 0;
-            // 
-            // dgvExplanation
-            // 
-            this.dgvExplanation.AllowUserToAddRows = false;
-            this.dgvExplanation.AllowUserToDeleteRows = false;
-            this.dgvExplanation.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvExplanation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExplanation.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dgvExplanation.Location = new System.Drawing.Point(517, 0);
-            this.dgvExplanation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.dgvExplanation.Name = "dgvExplanation";
-            this.dgvExplanation.ReadOnly = true;
-            this.dgvExplanation.RowHeadersWidth = 51;
-            this.dgvExplanation.Size = new System.Drawing.Size(532, 332);
-            this.dgvExplanation.TabIndex = 1;
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(1049, 0);
+            this.splitter1.Location = new System.Drawing.Point(389, 0);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 332);
+            this.splitter1.Size = new System.Drawing.Size(2, 270);
             this.splitter1.TabIndex = 2;
             this.splitter1.TabStop = false;
             // 
+            // splitter2
+            // 
+            this.splitter2.Location = new System.Drawing.Point(391, 0);
+            this.splitter2.Name = "splitter2";
+            this.splitter2.Size = new System.Drawing.Size(3, 270);
+            this.splitter2.TabIndex = 3;
+            this.splitter2.TabStop = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(394, 0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(382, 270);
+            this.listView1.TabIndex = 4;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // splitter3
+            // 
+            this.splitter3.Location = new System.Drawing.Point(776, 0);
+            this.splitter3.Name = "splitter3";
+            this.splitter3.Size = new System.Drawing.Size(3, 270);
+            this.splitter3.TabIndex = 5;
+            this.splitter3.TabStop = false;
+            // 
             // Explanation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1051, 332);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(783, 270);
+            this.Controls.Add(this.splitter3);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.splitter2);
             this.Controls.Add(this.splitter1);
-            this.Controls.Add(this.dgvExplanation);
             this.Controls.Add(this.tvExplanation);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Explanation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Объяснение";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvExplanation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,7 +99,9 @@
         #endregion
 
         private System.Windows.Forms.TreeView tvExplanation;
-        private System.Windows.Forms.DataGridView dgvExplanation;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Splitter splitter2;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Splitter splitter3;
     }
 }

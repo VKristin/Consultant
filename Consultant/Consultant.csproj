@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangeRule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeRule.Designer.cs">
+      <DependentUpon>ChangeRule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChangeRule.resx">
+      <DependentUpon>ChangeRule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultation.resx">
       <DependentUpon>Consultation.cs</DependentUpon>
     </EmbeddedResource>

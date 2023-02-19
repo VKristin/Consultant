@@ -81,6 +81,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Consultation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Консультация";
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -41,7 +41,14 @@
             this.показатьОбъяснениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpRools = new System.Windows.Forms.TabPage();
+            this.lvRules = new System.Windows.Forms.ListView();
+            this.ruleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpVars = new System.Windows.Forms.TabPage();
+            this.lvVars = new System.Windows.Forms.ListView();
+            this.varName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.varType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.varDomain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpDomens = new System.Windows.Forms.TabPage();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -53,14 +60,8 @@
             this.gbVarOrDomain = new System.Windows.Forms.GroupBox();
             this.lvVarOrDomain = new System.Windows.Forms.ListView();
             this.gbPkg = new System.Windows.Forms.GroupBox();
-            this.lvRules = new System.Windows.Forms.ListView();
-            this.Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvVars = new System.Windows.Forms.ListView();
-            this.varName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.varType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.varDomain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.DomainName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvDomain = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpRools.SuspendLayout();
@@ -154,6 +155,7 @@
             this.показатьОбъяснениеToolStripMenuItem.Name = "показатьОбъяснениеToolStripMenuItem";
             this.показатьОбъяснениеToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.показатьОбъяснениеToolStripMenuItem.Text = "Показать объяснение";
+            this.показатьОбъяснениеToolStripMenuItem.Click += new System.EventHandler(this.показатьОбъяснениеToolStripMenuItem_Click);
             // 
             // tabControl
             // 
@@ -179,6 +181,30 @@
             this.tpRools.Text = "Правила";
             this.tpRools.UseVisualStyleBackColor = true;
             // 
+            // lvRules
+            // 
+            this.lvRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ruleName,
+            this.Description});
+            this.lvRules.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvRules.HideSelection = false;
+            this.lvRules.Location = new System.Drawing.Point(3, 3);
+            this.lvRules.Name = "lvRules";
+            this.lvRules.Size = new System.Drawing.Size(739, 648);
+            this.lvRules.TabIndex = 0;
+            this.lvRules.UseCompatibleStateImageBehavior = false;
+            this.lvRules.View = System.Windows.Forms.View.Details;
+            // 
+            // ruleName
+            // 
+            this.ruleName.Text = "Имя";
+            this.ruleName.Width = 325;
+            // 
+            // Description
+            // 
+            this.Description.Text = "Описание";
+            this.Description.Width = 311;
+            // 
             // tpVars
             // 
             this.tpVars.Controls.Add(this.lvVars);
@@ -190,9 +216,39 @@
             this.tpVars.Text = "Переменные";
             this.tpVars.UseVisualStyleBackColor = true;
             // 
+            // lvVars
+            // 
+            this.lvVars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.varName,
+            this.varType,
+            this.varDomain});
+            this.lvVars.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvVars.HideSelection = false;
+            this.lvVars.Location = new System.Drawing.Point(3, 3);
+            this.lvVars.Name = "lvVars";
+            this.lvVars.Size = new System.Drawing.Size(739, 648);
+            this.lvVars.TabIndex = 0;
+            this.lvVars.UseCompatibleStateImageBehavior = false;
+            this.lvVars.View = System.Windows.Forms.View.Details;
+            // 
+            // varName
+            // 
+            this.varName.Text = "Имя";
+            this.varName.Width = 236;
+            // 
+            // varType
+            // 
+            this.varType.Text = "Тип";
+            this.varType.Width = 199;
+            // 
+            // varDomain
+            // 
+            this.varDomain.Text = "Домен";
+            this.varDomain.Width = 287;
+            // 
             // tpDomens
             // 
-            this.tpDomens.Controls.Add(this.listView1);
+            this.tpDomens.Controls.Add(this.lvDomain);
             this.tpDomens.Location = new System.Drawing.Point(4, 22);
             this.tpDomens.Name = "tpDomens";
             this.tpDomens.Size = new System.Drawing.Size(745, 654);
@@ -304,69 +360,23 @@
             this.gbPkg.TabStop = false;
             this.gbPkg.Text = "Посылка";
             // 
-            // lvRules
+            // DomainName
             // 
-            this.lvRules.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Name,
-            this.Description});
-            this.lvRules.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvRules.HideSelection = false;
-            this.lvRules.Location = new System.Drawing.Point(3, 3);
-            this.lvRules.Name = "lvRules";
-            this.lvRules.Size = new System.Drawing.Size(739, 648);
-            this.lvRules.TabIndex = 0;
-            this.lvRules.UseCompatibleStateImageBehavior = false;
-            this.lvRules.View = System.Windows.Forms.View.Details;
+            this.DomainName.Text = "Имя";
+            this.DomainName.Width = 300;
             // 
-            // Name
+            // lvDomain
             // 
-            this.Name.Text = "Имя";
-            this.Name.Width = 325;
-            // 
-            // Description
-            // 
-            this.Description.Text = "Описание";
-            this.Description.Width = 311;
-            // 
-            // lvVars
-            // 
-            this.lvVars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.varName,
-            this.varType,
-            this.varDomain});
-            this.lvVars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvVars.HideSelection = false;
-            this.lvVars.Location = new System.Drawing.Point(3, 3);
-            this.lvVars.Name = "lvVars";
-            this.lvVars.Size = new System.Drawing.Size(739, 648);
-            this.lvVars.TabIndex = 0;
-            this.lvVars.UseCompatibleStateImageBehavior = false;
-            this.lvVars.View = System.Windows.Forms.View.Details;
-            // 
-            // varName
-            // 
-            this.varName.Text = "Имя";
-            this.varName.Width = 236;
-            // 
-            // varType
-            // 
-            this.varType.Text = "Тип";
-            this.varType.Width = 199;
-            // 
-            // varDomain
-            // 
-            this.varDomain.Text = "Домен";
-            this.varDomain.Width = 287;
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(745, 654);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvDomain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.DomainName});
+            this.lvDomain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDomain.HideSelection = false;
+            this.lvDomain.Location = new System.Drawing.Point(0, 0);
+            this.lvDomain.Name = "lvDomain";
+            this.lvDomain.Size = new System.Drawing.Size(745, 654);
+            this.lvDomain.TabIndex = 0;
+            this.lvDomain.UseCompatibleStateImageBehavior = false;
+            this.lvDomain.View = System.Windows.Forms.View.Details;
             // 
             // Consultant
             // 
@@ -381,6 +391,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Consultant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultant";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -425,13 +436,14 @@
         private System.Windows.Forms.ListView lvPkg;
         private System.Windows.Forms.GroupBox gbPkg;
         private System.Windows.Forms.ListView lvRules;
-        private System.Windows.Forms.ColumnHeader Name;
+        private System.Windows.Forms.ColumnHeader ruleName;
         private System.Windows.Forms.ColumnHeader Description;
         private System.Windows.Forms.ListView lvVars;
         private System.Windows.Forms.ColumnHeader varName;
         private System.Windows.Forms.ColumnHeader varType;
         private System.Windows.Forms.ColumnHeader varDomain;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvDomain;
+        private System.Windows.Forms.ColumnHeader DomainName;
     }
 }
 
