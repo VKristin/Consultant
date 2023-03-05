@@ -15,7 +15,9 @@ namespace Consultant
         public Consultant()
         {
             InitializeComponent();
-            gbVarOrDomain.Visible = false;
+            gbDomain.Visible = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -23,22 +25,31 @@ namespace Consultant
             switch (tabControl.SelectedIndex)
             {
                 case 0:
-                    gbVarOrDomain.Visible = false;
-                    gbPkg.Visible = true;
-                    gbConclusion.Visible = true;
+                    gbDomain.Visible = false;
+                    gbPkgOrVar.Visible = true;
+                    gbConclusionorDomain.Visible = true;
+                    gbPkgOrVar.Text = "Посылка";
+                    gbConclusionorDomain.Text = "Заключение";
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
                     break;
                     //добавить значение домена
                 case 1:
-                    gbVarOrDomain.Visible = true;
-                    gbVarOrDomain.Text = "Текст вопроса";
-                    gbPkg.Visible = false;
-                    gbConclusion.Visible = false;
+                    gbDomain.Visible = false;
+                    gbPkgOrVar.Visible = true;
+                    gbConclusionorDomain.Visible = true;
+                    gbPkgOrVar.Text = "Текст вопроса";
+                    gbConclusionorDomain.Text = "Значение домена";
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
                     break;
                 case 2:
-                    gbVarOrDomain.Visible = true;
-                    gbVarOrDomain.Text = "Значение домена";
-                    gbPkg.Visible = false;
-                    gbConclusion.Visible = false;
+                    gbDomain.Visible = true;
+                    gbDomain.Text = "Значение домена";
+                    gbPkgOrVar.Visible = false;
+                    gbConclusionorDomain.Visible = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
                     break;
             }
         }
@@ -53,6 +64,40 @@ namespace Consultant
         {
             Explanation explanation = new Explanation();
             explanation.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (lvRules.SelectedItems.Count != 0)
+            {
+                ChangeRule changeRule = new ChangeRule();
+                changeRule.Show();
+            }
+        }
+
+        private void lvRules_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvRules.SelectedItems.Count != 0)
+            {
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
+            }
+            else
+            {
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            switch (tabControl.SelectedIndex)
+            {
+                case 0: break;
+                case 1: CreateVar createVar = new CreateVar(); createVar.Show(); break;
+                case 2: break;
+            }
         }
     }
 }

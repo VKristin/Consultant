@@ -52,17 +52,36 @@
     <Compile Include="ChangeRule.Designer.cs">
       <DependentUpon>ChangeRule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes.cs" />
     <Compile Include="Consultation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consultation.Designer.cs">
       <DependentUpon>Consultation.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateDomain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateDomain.Designer.cs">
+      <DependentUpon>CreateDomain.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateDomen.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CreateDomen.Designer.cs">
       <DependentUpon>CreateDomen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateFact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateFact.Designer.cs">
+      <DependentUpon>CreateFact.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateVar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateVar.Designer.cs">
+      <DependentUpon>CreateVar.cs</DependentUpon>
     </Compile>
     <Compile Include="Explanation.cs">
       <SubType>Form</SubType>
@@ -84,8 +103,17 @@
     <EmbeddedResource Include="Consultation.resx">
       <DependentUpon>Consultation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateDomain.resx">
+      <DependentUpon>CreateDomain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateDomen.resx">
       <DependentUpon>CreateDomen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateFact.resx">
+      <DependentUpon>CreateFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateVar.resx">
+      <DependentUpon>CreateVar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Explanation.resx">
       <DependentUpon>Explanation.cs</DependentUpon>

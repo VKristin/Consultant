@@ -27,3 +27,7 @@ C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Consultation.resources
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Explanation.resources
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.ChangeRule.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.ChangeRule.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateVar.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomain.resources
+C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateFact.resources
