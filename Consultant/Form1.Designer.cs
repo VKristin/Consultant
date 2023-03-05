@@ -41,52 +41,52 @@
             this.показатьОбъяснениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpRools = new System.Windows.Forms.TabPage();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteRule = new System.Windows.Forms.Button();
+            this.btnChangeRule = new System.Windows.Forms.Button();
+            this.btnAddRule = new System.Windows.Forms.Button();
+            this.gbConclusion = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.gbPackage = new System.Windows.Forms.GroupBox();
+            this.listView2 = new System.Windows.Forms.ListView();
             this.lvRules = new System.Windows.Forms.ListView();
             this.ruleName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Description = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpVars = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnDeleteVar = new System.Windows.Forms.Button();
+            this.btnChangeVar = new System.Windows.Forms.Button();
+            this.btnVarAdd = new System.Windows.Forms.Button();
+            this.gbVarValue = new System.Windows.Forms.GroupBox();
+            this.lvConclusion = new System.Windows.Forms.ListView();
+            this.gbQuestionText = new System.Windows.Forms.GroupBox();
+            this.lvPkg = new System.Windows.Forms.ListView();
             this.lvVars = new System.Windows.Forms.ListView();
             this.varName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.varType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.varDomain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpDomens = new System.Windows.Forms.TabPage();
+            this.gbDomain = new System.Windows.Forms.GroupBox();
+            this.lvVarOrDomain = new System.Windows.Forms.ListView();
+            this.gbEdit = new System.Windows.Forms.GroupBox();
+            this.btnDomainDelete = new System.Windows.Forms.Button();
+            this.btnDomainChange = new System.Windows.Forms.Button();
+            this.btnDomainAdd = new System.Windows.Forms.Button();
             this.lvDomain = new System.Windows.Forms.ListView();
             this.DomainName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.lvVarOrDomain = new System.Windows.Forms.ListView();
-            this.gbDomain = new System.Windows.Forms.GroupBox();
-            this.gbConclusionorDomain = new System.Windows.Forms.GroupBox();
-            this.lvConclusion = new System.Windows.Forms.ListView();
-            this.gbPkgOrVar = new System.Windows.Forms.GroupBox();
-            this.lvPkg = new System.Windows.Forms.ListView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.gbEdit = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tpRools.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.gbConclusion.SuspendLayout();
+            this.gbPackage.SuspendLayout();
             this.tpVars.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.gbVarValue.SuspendLayout();
+            this.gbQuestionText.SuspendLayout();
             this.tpDomens.SuspendLayout();
             this.gbDomain.SuspendLayout();
-            this.gbConclusionorDomain.SuspendLayout();
-            this.gbPkgOrVar.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.gbEdit.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -189,8 +189,8 @@
             // tpRools
             // 
             this.tpRools.Controls.Add(this.groupBox4);
-            this.tpRools.Controls.Add(this.groupBox1);
-            this.tpRools.Controls.Add(this.groupBox2);
+            this.tpRools.Controls.Add(this.gbConclusion);
+            this.tpRools.Controls.Add(this.gbPackage);
             this.tpRools.Controls.Add(this.lvRules);
             this.tpRools.Location = new System.Drawing.Point(4, 22);
             this.tpRools.Name = "tpRools";
@@ -199,6 +199,92 @@
             this.tpRools.TabIndex = 0;
             this.tpRools.Text = "Правила";
             this.tpRools.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnDeleteRule);
+            this.groupBox4.Controls.Add(this.btnChangeRule);
+            this.groupBox4.Controls.Add(this.btnAddRule);
+            this.groupBox4.Location = new System.Drawing.Point(746, 3);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(10);
+            this.groupBox4.Size = new System.Drawing.Size(409, 108);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Редактирование";
+            // 
+            // btnDeleteRule
+            // 
+            this.btnDeleteRule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteRule.Location = new System.Drawing.Point(10, 69);
+            this.btnDeleteRule.Name = "btnDeleteRule";
+            this.btnDeleteRule.Size = new System.Drawing.Size(389, 23);
+            this.btnDeleteRule.TabIndex = 2;
+            this.btnDeleteRule.Text = "Удалить";
+            this.btnDeleteRule.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeRule
+            // 
+            this.btnChangeRule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChangeRule.Location = new System.Drawing.Point(10, 46);
+            this.btnChangeRule.Name = "btnChangeRule";
+            this.btnChangeRule.Size = new System.Drawing.Size(389, 23);
+            this.btnChangeRule.TabIndex = 1;
+            this.btnChangeRule.Text = "Изменить";
+            this.btnChangeRule.UseVisualStyleBackColor = true;
+            this.btnChangeRule.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btnAddRule
+            // 
+            this.btnAddRule.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddRule.Location = new System.Drawing.Point(10, 23);
+            this.btnAddRule.Name = "btnAddRule";
+            this.btnAddRule.Size = new System.Drawing.Size(389, 23);
+            this.btnAddRule.TabIndex = 0;
+            this.btnAddRule.Text = "Добавить";
+            this.btnAddRule.UseVisualStyleBackColor = true;
+            this.btnAddRule.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // gbConclusion
+            // 
+            this.gbConclusion.Controls.Add(this.listView1);
+            this.gbConclusion.Location = new System.Drawing.Point(749, 341);
+            this.gbConclusion.Name = "gbConclusion";
+            this.gbConclusion.Size = new System.Drawing.Size(406, 300);
+            this.gbConclusion.TabIndex = 8;
+            this.gbConclusion.TabStop = false;
+            this.gbConclusion.Text = "Заключение";
+            // 
+            // listView1
+            // 
+            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(3, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(400, 281);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // gbPackage
+            // 
+            this.gbPackage.Controls.Add(this.listView2);
+            this.gbPackage.Location = new System.Drawing.Point(746, 111);
+            this.gbPackage.Name = "gbPackage";
+            this.gbPackage.Size = new System.Drawing.Size(409, 227);
+            this.gbPackage.TabIndex = 7;
+            this.gbPackage.TabStop = false;
+            this.gbPackage.Text = "Посылка";
+            // 
+            // listView2
+            // 
+            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.HideSelection = false;
+            this.listView2.Location = new System.Drawing.Point(3, 16);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(403, 208);
+            this.listView2.TabIndex = 0;
+            this.listView2.UseCompatibleStateImageBehavior = false;
             // 
             // lvRules
             // 
@@ -228,8 +314,8 @@
             // tpVars
             // 
             this.tpVars.Controls.Add(this.groupBox3);
-            this.tpVars.Controls.Add(this.gbConclusionorDomain);
-            this.tpVars.Controls.Add(this.gbPkgOrVar);
+            this.tpVars.Controls.Add(this.gbVarValue);
+            this.tpVars.Controls.Add(this.gbQuestionText);
             this.tpVars.Controls.Add(this.lvVars);
             this.tpVars.Location = new System.Drawing.Point(4, 22);
             this.tpVars.Name = "tpVars";
@@ -238,6 +324,92 @@
             this.tpVars.TabIndex = 1;
             this.tpVars.Text = "Переменные";
             this.tpVars.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnDeleteVar);
+            this.groupBox3.Controls.Add(this.btnChangeVar);
+            this.groupBox3.Controls.Add(this.btnVarAdd);
+            this.groupBox3.Location = new System.Drawing.Point(746, 3);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(10);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(10);
+            this.groupBox3.Size = new System.Drawing.Size(409, 108);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Редактирование";
+            // 
+            // btnDeleteVar
+            // 
+            this.btnDeleteVar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDeleteVar.Location = new System.Drawing.Point(10, 69);
+            this.btnDeleteVar.Name = "btnDeleteVar";
+            this.btnDeleteVar.Size = new System.Drawing.Size(389, 23);
+            this.btnDeleteVar.TabIndex = 2;
+            this.btnDeleteVar.Text = "Удалить";
+            this.btnDeleteVar.UseVisualStyleBackColor = true;
+            // 
+            // btnChangeVar
+            // 
+            this.btnChangeVar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChangeVar.Location = new System.Drawing.Point(10, 46);
+            this.btnChangeVar.Name = "btnChangeVar";
+            this.btnChangeVar.Size = new System.Drawing.Size(389, 23);
+            this.btnChangeVar.TabIndex = 1;
+            this.btnChangeVar.Text = "Изменить";
+            this.btnChangeVar.UseVisualStyleBackColor = true;
+            this.btnChangeVar.Click += new System.EventHandler(this.btnChangeVar_Click);
+            // 
+            // btnVarAdd
+            // 
+            this.btnVarAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVarAdd.Location = new System.Drawing.Point(10, 23);
+            this.btnVarAdd.Name = "btnVarAdd";
+            this.btnVarAdd.Size = new System.Drawing.Size(389, 23);
+            this.btnVarAdd.TabIndex = 0;
+            this.btnVarAdd.Text = "Добавить";
+            this.btnVarAdd.UseVisualStyleBackColor = true;
+            this.btnVarAdd.Click += new System.EventHandler(this.btnVarAdd_Click);
+            // 
+            // gbVarValue
+            // 
+            this.gbVarValue.Controls.Add(this.lvConclusion);
+            this.gbVarValue.Location = new System.Drawing.Point(746, 350);
+            this.gbVarValue.Name = "gbVarValue";
+            this.gbVarValue.Size = new System.Drawing.Size(406, 300);
+            this.gbVarValue.TabIndex = 6;
+            this.gbVarValue.TabStop = false;
+            this.gbVarValue.Text = "Значение перменной";
+            // 
+            // lvConclusion
+            // 
+            this.lvConclusion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvConclusion.HideSelection = false;
+            this.lvConclusion.Location = new System.Drawing.Point(3, 16);
+            this.lvConclusion.Name = "lvConclusion";
+            this.lvConclusion.Size = new System.Drawing.Size(400, 281);
+            this.lvConclusion.TabIndex = 0;
+            this.lvConclusion.UseCompatibleStateImageBehavior = false;
+            // 
+            // gbQuestionText
+            // 
+            this.gbQuestionText.Controls.Add(this.lvPkg);
+            this.gbQuestionText.Location = new System.Drawing.Point(746, 117);
+            this.gbQuestionText.Name = "gbQuestionText";
+            this.gbQuestionText.Size = new System.Drawing.Size(409, 227);
+            this.gbQuestionText.TabIndex = 5;
+            this.gbQuestionText.TabStop = false;
+            this.gbQuestionText.Text = "Текст вопроса";
+            // 
+            // lvPkg
+            // 
+            this.lvPkg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvPkg.HideSelection = false;
+            this.lvPkg.Location = new System.Drawing.Point(3, 16);
+            this.lvPkg.Name = "lvPkg";
+            this.lvPkg.Size = new System.Drawing.Size(403, 208);
+            this.lvPkg.TabIndex = 0;
+            this.lvPkg.UseCompatibleStateImageBehavior = false;
             // 
             // lvVars
             // 
@@ -252,6 +424,7 @@
             this.lvVars.TabIndex = 0;
             this.lvVars.UseCompatibleStateImageBehavior = false;
             this.lvVars.View = System.Windows.Forms.View.Details;
+            this.lvVars.SelectedIndexChanged += new System.EventHandler(this.lvVars_SelectedIndexChanged);
             // 
             // varName
             // 
@@ -280,22 +453,15 @@
             this.tpDomens.Text = "Домены";
             this.tpDomens.UseVisualStyleBackColor = true;
             // 
-            // lvDomain
+            // gbDomain
             // 
-            this.lvDomain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.DomainName});
-            this.lvDomain.HideSelection = false;
-            this.lvDomain.Location = new System.Drawing.Point(0, 0);
-            this.lvDomain.Name = "lvDomain";
-            this.lvDomain.Size = new System.Drawing.Size(745, 654);
-            this.lvDomain.TabIndex = 0;
-            this.lvDomain.UseCompatibleStateImageBehavior = false;
-            this.lvDomain.View = System.Windows.Forms.View.Details;
-            // 
-            // DomainName
-            // 
-            this.DomainName.Text = "Имя";
-            this.DomainName.Width = 300;
+            this.gbDomain.Controls.Add(this.lvVarOrDomain);
+            this.gbDomain.Location = new System.Drawing.Point(751, 113);
+            this.gbDomain.Name = "gbDomain";
+            this.gbDomain.Size = new System.Drawing.Size(408, 533);
+            this.gbDomain.TabIndex = 6;
+            this.gbDomain.TabStop = false;
+            this.gbDomain.Text = "Значение домена";
             // 
             // lvVarOrDomain
             // 
@@ -307,133 +473,11 @@
             this.lvVarOrDomain.TabIndex = 0;
             this.lvVarOrDomain.UseCompatibleStateImageBehavior = false;
             // 
-            // gbDomain
-            // 
-            this.gbDomain.Controls.Add(this.lvVarOrDomain);
-            this.gbDomain.Location = new System.Drawing.Point(751, 113);
-            this.gbDomain.Name = "gbDomain";
-            this.gbDomain.Size = new System.Drawing.Size(408, 533);
-            this.gbDomain.TabIndex = 6;
-            this.gbDomain.TabStop = false;
-            this.gbDomain.Text = "Значение домена";
-            // 
-            // gbConclusionorDomain
-            // 
-            this.gbConclusionorDomain.Controls.Add(this.lvConclusion);
-            this.gbConclusionorDomain.Location = new System.Drawing.Point(746, 350);
-            this.gbConclusionorDomain.Name = "gbConclusionorDomain";
-            this.gbConclusionorDomain.Size = new System.Drawing.Size(406, 300);
-            this.gbConclusionorDomain.TabIndex = 6;
-            this.gbConclusionorDomain.TabStop = false;
-            this.gbConclusionorDomain.Text = "Значение перменной";
-            // 
-            // lvConclusion
-            // 
-            this.lvConclusion.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvConclusion.HideSelection = false;
-            this.lvConclusion.Location = new System.Drawing.Point(3, 16);
-            this.lvConclusion.Name = "lvConclusion";
-            this.lvConclusion.Size = new System.Drawing.Size(400, 281);
-            this.lvConclusion.TabIndex = 0;
-            this.lvConclusion.UseCompatibleStateImageBehavior = false;
-            // 
-            // gbPkgOrVar
-            // 
-            this.gbPkgOrVar.Controls.Add(this.lvPkg);
-            this.gbPkgOrVar.Location = new System.Drawing.Point(746, 117);
-            this.gbPkgOrVar.Name = "gbPkgOrVar";
-            this.gbPkgOrVar.Size = new System.Drawing.Size(409, 227);
-            this.gbPkgOrVar.TabIndex = 5;
-            this.gbPkgOrVar.TabStop = false;
-            this.gbPkgOrVar.Text = "Текст вопроса";
-            // 
-            // lvPkg
-            // 
-            this.lvPkg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvPkg.HideSelection = false;
-            this.lvPkg.Location = new System.Drawing.Point(3, 16);
-            this.lvPkg.Name = "lvPkg";
-            this.lvPkg.Size = new System.Drawing.Size(403, 208);
-            this.lvPkg.TabIndex = 0;
-            this.lvPkg.UseCompatibleStateImageBehavior = false;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.listView1);
-            this.groupBox1.Location = new System.Drawing.Point(749, 341);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(406, 300);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Заключение";
-            // 
-            // listView1
-            // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(400, 281);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.listView2);
-            this.groupBox2.Location = new System.Drawing.Point(746, 111);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(409, 227);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Посылка";
-            // 
-            // listView2
-            // 
-            this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 16);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(403, 208);
-            this.listView2.TabIndex = 0;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdd.Location = new System.Drawing.Point(10, 23);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(389, 23);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Добавить";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEdit.Location = new System.Drawing.Point(10, 46);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(389, 23);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Изменить";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDelete.Location = new System.Drawing.Point(10, 69);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(389, 23);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Удалить";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
             // gbEdit
             // 
-            this.gbEdit.Controls.Add(this.btnDelete);
-            this.gbEdit.Controls.Add(this.btnEdit);
-            this.gbEdit.Controls.Add(this.btnAdd);
+            this.gbEdit.Controls.Add(this.btnDomainDelete);
+            this.gbEdit.Controls.Add(this.btnDomainChange);
+            this.gbEdit.Controls.Add(this.btnDomainAdd);
             this.gbEdit.Location = new System.Drawing.Point(749, 0);
             this.gbEdit.Margin = new System.Windows.Forms.Padding(10);
             this.gbEdit.Name = "gbEdit";
@@ -443,93 +487,55 @@
             this.gbEdit.TabStop = false;
             this.gbEdit.Text = "Редактирование";
             // 
-            // groupBox3
+            // btnDomainDelete
             // 
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Location = new System.Drawing.Point(746, 3);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox3.Size = new System.Drawing.Size(409, 108);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Редактирование";
+            this.btnDomainDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDomainDelete.Location = new System.Drawing.Point(10, 69);
+            this.btnDomainDelete.Name = "btnDomainDelete";
+            this.btnDomainDelete.Size = new System.Drawing.Size(389, 23);
+            this.btnDomainDelete.TabIndex = 2;
+            this.btnDomainDelete.Text = "Удалить";
+            this.btnDomainDelete.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDomainChange
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Location = new System.Drawing.Point(10, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(389, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Удалить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDomainChange.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDomainChange.Location = new System.Drawing.Point(10, 46);
+            this.btnDomainChange.Name = "btnDomainChange";
+            this.btnDomainChange.Size = new System.Drawing.Size(389, 23);
+            this.btnDomainChange.TabIndex = 1;
+            this.btnDomainChange.Text = "Изменить";
+            this.btnDomainChange.UseVisualStyleBackColor = true;
+            this.btnDomainChange.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button2
+            // btnDomainAdd
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.Location = new System.Drawing.Point(10, 46);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(389, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Изменить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDomainAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDomainAdd.Location = new System.Drawing.Point(10, 23);
+            this.btnDomainAdd.Name = "btnDomainAdd";
+            this.btnDomainAdd.Size = new System.Drawing.Size(389, 23);
+            this.btnDomainAdd.TabIndex = 0;
+            this.btnDomainAdd.Text = "Добавить";
+            this.btnDomainAdd.UseVisualStyleBackColor = true;
+            this.btnDomainAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button3
+            // lvDomain
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Location = new System.Drawing.Point(10, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(389, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Добавить";
-            this.button3.UseVisualStyleBackColor = true;
+            this.lvDomain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.DomainName});
+            this.lvDomain.HideSelection = false;
+            this.lvDomain.Location = new System.Drawing.Point(0, 0);
+            this.lvDomain.Name = "lvDomain";
+            this.lvDomain.Size = new System.Drawing.Size(745, 654);
+            this.lvDomain.TabIndex = 0;
+            this.lvDomain.UseCompatibleStateImageBehavior = false;
+            this.lvDomain.View = System.Windows.Forms.View.Details;
+            this.lvDomain.SelectedIndexChanged += new System.EventHandler(this.lvDomain_SelectedIndexChanged);
             // 
-            // groupBox4
+            // DomainName
             // 
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.button5);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Location = new System.Drawing.Point(746, 3);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(10);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox4.Size = new System.Drawing.Size(409, 108);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Редактирование";
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.Location = new System.Drawing.Point(10, 69);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(389, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Удалить";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Location = new System.Drawing.Point(10, 46);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(389, 23);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Изменить";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Location = new System.Drawing.Point(10, 23);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(389, 23);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Добавить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.DomainName.Text = "Имя";
+            this.DomainName.Width = 300;
             // 
             // Consultant
             // 
@@ -546,16 +552,16 @@
             this.menuStrip1.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.tpRools.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.gbConclusion.ResumeLayout(false);
+            this.gbPackage.ResumeLayout(false);
             this.tpVars.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.gbVarValue.ResumeLayout(false);
+            this.gbQuestionText.ResumeLayout(false);
             this.tpDomens.ResumeLayout(false);
             this.gbDomain.ResumeLayout(false);
-            this.gbConclusionorDomain.ResumeLayout(false);
-            this.gbPkgOrVar.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
             this.gbEdit.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,28 +593,28 @@
         private System.Windows.Forms.ColumnHeader varDomain;
         private System.Windows.Forms.ListView lvDomain;
         private System.Windows.Forms.ColumnHeader DomainName;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbConclusion;
         private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbPackage;
         private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.GroupBox gbConclusionorDomain;
+        private System.Windows.Forms.GroupBox gbVarValue;
         private System.Windows.Forms.ListView lvConclusion;
-        private System.Windows.Forms.GroupBox gbPkgOrVar;
+        private System.Windows.Forms.GroupBox gbQuestionText;
         private System.Windows.Forms.ListView lvPkg;
         private System.Windows.Forms.GroupBox gbDomain;
         private System.Windows.Forms.ListView lvVarOrDomain;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnDeleteRule;
+        private System.Windows.Forms.Button btnChangeRule;
+        private System.Windows.Forms.Button btnAddRule;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDeleteVar;
+        private System.Windows.Forms.Button btnChangeVar;
+        private System.Windows.Forms.Button btnVarAdd;
         private System.Windows.Forms.GroupBox gbEdit;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnDomainDelete;
+        private System.Windows.Forms.Button btnDomainChange;
+        private System.Windows.Forms.Button btnDomainAdd;
     }
 }
 

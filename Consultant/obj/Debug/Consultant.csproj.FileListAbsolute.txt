@@ -9,7 +9,6 @@ D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultan
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.CoreCompileInputs.cache
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.exe
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.pdb
-D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomen.resources
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin\Debug\Consultant.exe.config
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin\Debug\Consultant.exe
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin\Debug\Consultant.pdb
@@ -31,3 +30,6 @@ C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateVar.resources
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomain.resources
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateFact.resources
+D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomain.resources
+D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateFact.resources
+D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateVar.resources

@@ -15,43 +15,17 @@ namespace Consultant
         public Consultant()
         {
             InitializeComponent();
-            gbDomain.Visible = false;
-            btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
+            btnChangeRule.Enabled = false;
+            btnDeleteRule.Enabled = false;
+            btnChangeVar.Enabled = false;
+            btnDeleteVar.Enabled = false;
+            btnDomainChange.Enabled = false;
+            btnDomainDelete.Enabled = false;
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabControl.SelectedIndex)
-            {
-                case 0:
-                    gbDomain.Visible = false;
-                    gbPkgOrVar.Visible = true;
-                    gbConclusionorDomain.Visible = true;
-                    gbPkgOrVar.Text = "Посылка";
-                    gbConclusionorDomain.Text = "Заключение";
-                    btnEdit.Enabled = false;
-                    btnDelete.Enabled = false;
-                    break;
-                    //добавить значение домена
-                case 1:
-                    gbDomain.Visible = false;
-                    gbPkgOrVar.Visible = true;
-                    gbConclusionorDomain.Visible = true;
-                    gbPkgOrVar.Text = "Текст вопроса";
-                    gbConclusionorDomain.Text = "Значение домена";
-                    btnEdit.Enabled = false;
-                    btnDelete.Enabled = false;
-                    break;
-                case 2:
-                    gbDomain.Visible = true;
-                    gbDomain.Text = "Значение домена";
-                    gbPkgOrVar.Visible = false;
-                    gbConclusionorDomain.Visible = false;
-                    btnEdit.Enabled = false;
-                    btnDelete.Enabled = false;
-                    break;
-            }
+            
         }
 
         private void начатьКонсультациюToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,36 +42,77 @@ namespace Consultant
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (lvRules.SelectedItems.Count != 0)
-            {
-                ChangeRule changeRule = new ChangeRule();
-                changeRule.Show();
-            }
+            CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0]);
+            createDomain.ShowDialog();
         }
 
         private void lvRules_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvRules.SelectedItems.Count != 0)
             {
-                btnEdit.Enabled = true;
-                btnDelete.Enabled = true;
+                btnChangeRule.Enabled = true;
+                btnDeleteRule.Enabled = true;
             }
             else
             {
-                btnEdit.Enabled = false;
-                btnDelete.Enabled = false;
+                btnChangeRule.Enabled = false;
+                btnDeleteRule.Enabled = false;
             }
-
+        }
+        private void lvVars_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvVars.SelectedItems.Count != 0)
+            {
+                btnChangeVar.Enabled = true;
+                btnDeleteVar.Enabled = true;
+            }
+            else
+            {
+                btnChangeVar.Enabled = false;
+                btnDeleteVar.Enabled = false;
+            }
+        }
+        private void lvDomain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvRules.SelectedItems.Count != 0)
+            {
+                btnDomainChange.Enabled = true;
+                btnDomainDelete.Enabled = true;
+            }
+            else
+            {
+                btnDomainChange.Enabled = false;
+                btnDomainDelete.Enabled = false;
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            switch (tabControl.SelectedIndex)
-            {
-                case 0: break;
-                case 1: CreateVar createVar = new CreateVar(); createVar.Show(); break;
-                case 2: break;
-            }
+            CreateDomain createDomain = new CreateDomain(-1);
+            createDomain.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            ChangeRule changeRule = new ChangeRule(-1); //происходит добавление, а не редактирование
+            changeRule.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ChangeRule changeRule = new ChangeRule(lvRules.SelectedIndices[0]);
+        }
+
+        private void btnVarAdd_Click(object sender, EventArgs e)
+        {
+            CreateVar createVar = new CreateVar(-1);
+            createVar.ShowDialog();
+        }
+
+        private void btnChangeVar_Click(object sender, EventArgs e)
+        {
+            CreateVar createVar = new CreateVar(lvVars.SelectedIndices[0]);
+            createVar.ShowDialog();
         }
     }
 }

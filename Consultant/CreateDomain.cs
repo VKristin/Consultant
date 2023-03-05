@@ -12,7 +12,7 @@ namespace Consultant
 {
     public partial class CreateDomain : Form
     {
-        public CreateDomain()
+        public CreateDomain(int domainIndex)
         {
             InitializeComponent();
         }

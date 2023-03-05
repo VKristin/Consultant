@@ -59,9 +59,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 13);
+            this.label1.Size = new System.Drawing.Size(166, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Допустимые значения домемнов:";
+            this.label1.Text = "Допустимые значения домена:";
             // 
             // listView1
             // 
@@ -122,6 +122,7 @@
             this.Controls.Add(this.lbRuleName);
             this.Controls.Add(this.textBox1);
             this.Name = "CreateDomain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateDomain";
             this.ResumeLayout(false);
             this.PerformLayout();

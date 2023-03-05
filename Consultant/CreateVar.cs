@@ -12,9 +12,15 @@ namespace Consultant
 {
     public partial class CreateVar : Form
     {
-        public CreateVar()
+        public CreateVar(int varIndex)
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CreateDomain createDomain = new CreateDomain(-1);
+            createDomain.ShowDialog();
         }
     }
 }

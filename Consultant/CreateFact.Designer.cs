@@ -33,14 +33,17 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.btnAddVar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(13, 13);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(467, 21);
+            this.comboBox1.Size = new System.Drawing.Size(446, 21);
             this.comboBox1.TabIndex = 0;
             // 
             // lbRuleName
@@ -54,6 +57,7 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(13, 73);
             this.comboBox2.Name = "comboBox2";
@@ -78,17 +82,30 @@
             this.button7.Text = "ОК";
             this.button7.UseVisualStyleBackColor = true;
             // 
+            // btnAddVar
+            // 
+            this.btnAddVar.Location = new System.Drawing.Point(459, 11);
+            this.btnAddVar.Margin = new System.Windows.Forms.Padding(0);
+            this.btnAddVar.Name = "btnAddVar";
+            this.btnAddVar.Size = new System.Drawing.Size(21, 23);
+            this.btnAddVar.TabIndex = 17;
+            this.btnAddVar.Text = "+";
+            this.btnAddVar.UseVisualStyleBackColor = true;
+            this.btnAddVar.Click += new System.EventHandler(this.btnAddVar_Click);
+            // 
             // CreateFact
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 166);
+            this.Controls.Add(this.btnAddVar);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.lbRuleName);
             this.Controls.Add(this.comboBox1);
             this.Name = "CreateFact";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateFact";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -102,5 +119,6 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnAddVar;
     }
 }

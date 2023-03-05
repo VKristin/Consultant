@@ -12,9 +12,15 @@ namespace Consultant
 {
     public partial class CreateFact : Form
     {
-        public CreateFact()
+        public CreateFact(int factIndex)
         {
             InitializeComponent();
+        }
+
+        private void btnAddVar_Click(object sender, EventArgs e)
+        {
+            CreateVar createVar = new CreateVar(-1);
+            createVar.ShowDialog();
         }
     }
 }

@@ -65,12 +65,6 @@
     <Compile Include="CreateDomain.Designer.cs">
       <DependentUpon>CreateDomain.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateDomen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateDomen.Designer.cs">
-      <DependentUpon>CreateDomen.cs</DependentUpon>
-    </Compile>
     <Compile Include="CreateFact.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +99,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateDomain.resx">
       <DependentUpon>CreateDomain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateDomen.resx">
-      <DependentUpon>CreateDomen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateFact.resx">
       <DependentUpon>CreateFact.cs</DependentUpon>
