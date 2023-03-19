@@ -15,7 +15,6 @@ C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\bin
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.csproj.SuggestedBindingRedirects.cache
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Consultation.resources
-C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomen.resources
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Explanation.resources
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Consultant.resources
 C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.Properties.Resources.resources

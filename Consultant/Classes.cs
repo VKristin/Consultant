@@ -8,9 +8,9 @@ namespace Consultant
 {
     enum VarType
     {
-        requested,
-        inferred,
-        requestedInferred
+        Requested,
+        Inferred,
+        InferredRequested
     }
 
     class Rule //правила
