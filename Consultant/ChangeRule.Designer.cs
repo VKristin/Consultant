@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbRuleName = new System.Windows.Forms.TextBox();
             this.lbRuleName = new System.Windows.Forms.Label();
             this.gbPackage = new System.Windows.Forms.GroupBox();
             this.btnDeletePackage = new System.Windows.Forms.Button();
@@ -48,12 +48,12 @@
             this.gbConclusion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbRuleName
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(564, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbRuleName.Location = new System.Drawing.Point(12, 45);
+            this.tbRuleName.Name = "tbRuleName";
+            this.tbRuleName.Size = new System.Drawing.Size(564, 20);
+            this.tbRuleName.TabIndex = 0;
             // 
             // lbRuleName
             // 
@@ -214,7 +214,7 @@
             this.Controls.Add(this.gbConclusion);
             this.Controls.Add(this.gbPackage);
             this.Controls.Add(this.lbRuleName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbRuleName);
             this.Name = "ChangeRule";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChangeRule";
@@ -227,7 +227,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbRuleName;
         private System.Windows.Forms.Label lbRuleName;
         private System.Windows.Forms.GroupBox gbPackage;
         private System.Windows.Forms.Button btnDeletePackage;

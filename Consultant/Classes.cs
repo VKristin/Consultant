@@ -13,41 +13,83 @@ namespace Consultant
         InferredRequested
     }
 
-    class Rule //правила
+    public class Rule //правила
     {
-        string ruleName;
+        public string ruleName;
         List<Fact> facts; //посылка
         Fact conclusion; //заключение
         string ruleDescription; //reason
     }
-    class Domain //домен
+    public class Domain //домен
     {
-        string domainName;
-        List<DomainValue> value; //сделать не string
+        public string domainName;
+        public List<DomainValue> value;
+
+        public Domain()
+        {
+            value = new List<DomainValue>();
+        }
     }
-    class Var //переменная
+    public class Var //переменная
     {
-        string varName;
+        public string varName;
         Domain varDomain;
         //добавить вопрос для запрашиваемой перменной
         string question;
         VarType varType;
     }
-    class Fact //факт посылки или заключение
+    public class Fact //факт посылки или заключение
     {
         Var var;
         int value; //подумать над типом
     }
-    class KnowledgeBase //база знаний
+    public class KnowledgeBase //база знаний
     {
-        
-    }
-    class WorkingMemory //рабочая память
-    {
+        public string baseName;
+        public List<Rule> rules;
+        public List<Var> vars;
+        public List<Domain> domains;
 
+        public KnowledgeBase()
+        {
+            baseName = string.Empty;
+            rules = new List<Rule>();
+            domains = new List<Domain>();
+            vars= new List<Var>();
+        }
     }
-    class DomainValue
+    public class WorkingMemory //рабочая память
     {
-        string value;
+        public List<Rule> rules;
+        public List<Var> vars;
+        public Var goal;
+
+        public WorkingMemory()
+        {
+            rules = new List<Rule>();
+            vars = new List<Var>();
+            goal = new Var();
+        }
+    }
+    public class DomainValue
+    {
+        public string value;
+    }
+    public class MLV
+    {
+        public MLV() { }
+    }
+    public class ExpertSystemShell
+    {
+        public KnowledgeBase knowledgeBase;
+        public WorkingMemory workingMemory;
+        public MLV mlv;
+
+        public ExpertSystemShell()
+        {
+            knowledgeBase = new KnowledgeBase();
+            workingMemory = new WorkingMemory();
+            mlv = new MLV();
+        }
     }
 }

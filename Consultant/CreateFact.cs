@@ -12,14 +12,16 @@ namespace Consultant
 {
     public partial class CreateFact : Form
     {
-        public CreateFact(int factIndex)
+        KnowledgeBase knowledgeBase;
+        public CreateFact(int factIndex, KnowledgeBase knowledgeBase)
         {
             InitializeComponent();
+            this.knowledgeBase = knowledgeBase;
         }
 
         private void btnAddVar_Click(object sender, EventArgs e)
         {
-            CreateVar createVar = new CreateVar(-1);
+            CreateVar createVar = new CreateVar(-1, knowledgeBase);
             createVar.ShowDialog();
         }
     }

@@ -12,6 +12,7 @@ namespace Consultant
 {
     public partial class Consultant : Form
     {
+        ExpertSystemShell expertSystemShell = new ExpertSystemShell();
         public Consultant()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace Consultant
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0]);
+            CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0], expertSystemShell.knowledgeBase);
             createDomain.ShowDialog();
         }
 
@@ -88,30 +89,30 @@ namespace Consultant
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CreateDomain createDomain = new CreateDomain(-1);
+            CreateDomain createDomain = new CreateDomain(-1, expertSystemShell.knowledgeBase);
             createDomain.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ChangeRule changeRule = new ChangeRule(-1); //происходит добавление, а не редактирование
+            ChangeRule changeRule = new ChangeRule(-1, expertSystemShell.knowledgeBase); //происходит добавление, а не редактирование
             changeRule.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ChangeRule changeRule = new ChangeRule(lvRules.SelectedIndices[0]);
+            ChangeRule changeRule = new ChangeRule(lvRules.SelectedIndices[0], expertSystemShell.knowledgeBase);
         }
 
         private void btnVarAdd_Click(object sender, EventArgs e)
         {
-            CreateVar createVar = new CreateVar(-1);
+            CreateVar createVar = new CreateVar(-1, expertSystemShell.knowledgeBase);
             createVar.ShowDialog();
         }
 
         private void btnChangeVar_Click(object sender, EventArgs e)
         {
-            CreateVar createVar = new CreateVar(lvVars.SelectedIndices[0]);
+            CreateVar createVar = new CreateVar(lvVars.SelectedIndices[0], expertSystemShell.knowledgeBase);
             createVar.ShowDialog();
         }
     }

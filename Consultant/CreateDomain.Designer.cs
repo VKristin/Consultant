@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.lbRuleName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbDomainName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvDomainsValue = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbValue = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbRuleName
@@ -47,12 +49,12 @@
             this.lbRuleName.TabIndex = 5;
             this.lbRuleName.Text = "Имя домена:";
             // 
-            // textBox1
+            // tbDomainName
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(479, 20);
-            this.textBox1.TabIndex = 4;
+            this.tbDomainName.Location = new System.Drawing.Point(11, 28);
+            this.tbDomainName.Name = "tbDomainName";
+            this.tbDomainName.Size = new System.Drawing.Size(479, 20);
+            this.tbDomainName.TabIndex = 4;
             // 
             // label1
             // 
@@ -63,15 +65,16 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Допустимые значения домена:";
             // 
-            // listView1
+            // lvDomainsValue
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(11, 96);
-            this.listView1.Margin = new System.Windows.Forms.Padding(0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(480, 97);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvDomainsValue.HideSelection = false;
+            this.lvDomainsValue.Location = new System.Drawing.Point(11, 96);
+            this.lvDomainsValue.Margin = new System.Windows.Forms.Padding(0);
+            this.lvDomainsValue.Name = "lvDomainsValue";
+            this.lvDomainsValue.Size = new System.Drawing.Size(480, 97);
+            this.lvDomainsValue.TabIndex = 7;
+            this.lvDomainsValue.UseCompatibleStateImageBehavior = false;
+            this.lvDomainsValue.View = System.Windows.Forms.View.List;
             // 
             // button1
             // 
@@ -83,12 +86,12 @@
             this.button1.Text = "Удалить";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // tbValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(11, 255);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 20);
-            this.textBox2.TabIndex = 9;
+            this.tbValue.Location = new System.Drawing.Point(11, 255);
+            this.tbValue.Name = "tbValue";
+            this.tbValue.Size = new System.Drawing.Size(317, 20);
+            this.tbValue.TabIndex = 9;
             // 
             // button8
             // 
@@ -107,20 +110,42 @@
             this.button7.TabIndex = 17;
             this.button7.Text = "Добавить";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(415, 292);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 22);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Отмена";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(334, 292);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 22);
+            this.button3.TabIndex = 19;
+            this.button3.Text = "ОК";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // CreateDomain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 298);
+            this.ClientSize = new System.Drawing.Size(503, 324);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbValue);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvDomainsValue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbRuleName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbDomainName);
             this.Name = "CreateDomain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateDomain";
@@ -132,12 +157,14 @@
         #endregion
 
         private System.Windows.Forms.Label lbRuleName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbDomainName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvDomainsValue;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbValue;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

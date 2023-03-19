@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +13,21 @@ namespace Consultant
 {
     public partial class ChangeRule : Form
     {
-        public ChangeRule(int ruleIndex)
+        List<Rule> rules;
+        List<Var> vars;
+        KnowledgeBase knowledgeBase;
+        public ChangeRule(int ruleIndex, KnowledgeBase knowledgeBase)
         {
             InitializeComponent();
+            this.vars = knowledgeBase.vars;
+            this.rules = knowledgeBase.rules;
+            this.knowledgeBase = knowledgeBase;
+            if (ruleIndex != -1) //загрузка информации о правиле
+            { }
+            else
+            {
+                tbRuleName.Text = CreateRuleName(rules);
+            }
             btnDeleteConclusion.Enabled = false;
             btnDeletePackage.Enabled = false;
             btnChangeConclusion.Enabled = false;
@@ -51,19 +64,32 @@ namespace Consultant
 
         private void btnAddPackage_Click(object sender, EventArgs e)
         {
-            CreateFact createFact = new CreateFact(-1);
+            CreateFact createFact = new CreateFact(-1, knowledgeBase);
             createFact.ShowDialog();
         }
         private void btnChangePackage_Click(object sender, EventArgs e)
         {
-            CreateFact createFact = new CreateFact(lvPackage.SelectedIndices[0]);
+            CreateFact createFact = new CreateFact(lvPackage.SelectedIndices[0], knowledgeBase);
             createFact.ShowDialog();
         }
 
         private void btnAddConclusion_Click(object sender, EventArgs e)
         {
-            CreateFact createFact = new CreateFact(-1);
+            CreateFact createFact = new CreateFact(-1, knowledgeBase);
             createFact.ShowDialog();
+        }
+        private string CreateRuleName(List<Rule> rules)
+        {
+            string name = "";
+            int i = 1;
+            while (name=="")
+            {
+                string n = "Rule" + i;
+                if (rules.FindIndex(x => x.ruleName == n) == -1)
+                    return n;
+                i++;
+            }
+            return name;
         }
     }
 }

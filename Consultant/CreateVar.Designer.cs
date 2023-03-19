@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lbRuleName = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbVarName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,7 +38,7 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rbQuestion = new System.Windows.Forms.RichTextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,12 +52,12 @@
             this.lbRuleName.TabIndex = 3;
             this.lbRuleName.Text = "Имя переменной:";
             // 
-            // textBox1
+            // tbVarName
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(564, 20);
-            this.textBox1.TabIndex = 2;
+            this.tbVarName.Location = new System.Drawing.Point(11, 34);
+            this.tbVarName.Name = "tbVarName";
+            this.tbVarName.Size = new System.Drawing.Size(564, 20);
+            this.tbVarName.TabIndex = 2;
             // 
             // label1
             // 
@@ -126,7 +126,7 @@
             this.radioButton3.Size = new System.Drawing.Size(163, 17);
             this.radioButton3.TabIndex = 10;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Запрашиваемо-выводимая";
+            this.radioButton3.Text = "Выводимо-запрашиваемая";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -138,13 +138,13 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Текст запроса:";
             // 
-            // richTextBox1
+            // rbQuestion
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(15, 279);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(560, 96);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.rbQuestion.Location = new System.Drawing.Point(15, 279);
+            this.rbQuestion.Name = "rbQuestion";
+            this.rbQuestion.Size = new System.Drawing.Size(560, 96);
+            this.rbQuestion.TabIndex = 12;
+            this.rbQuestion.Text = "";
             // 
             // button8
             // 
@@ -171,7 +171,7 @@
             this.ClientSize = new System.Drawing.Size(587, 431);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rbQuestion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -181,7 +181,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbRuleName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbVarName);
             this.Name = "CreateVar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateVar";
@@ -193,7 +193,7 @@
         #endregion
 
         private System.Windows.Forms.Label lbRuleName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbVarName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
@@ -202,7 +202,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rbQuestion;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
     }
