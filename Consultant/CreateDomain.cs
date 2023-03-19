@@ -24,7 +24,7 @@ namespace Consultant
             }
             else
             {
-
+                
             }
         }
         private string CreateDomainName(List<Domain> domains)
@@ -55,6 +55,7 @@ namespace Consultant
         private void button3_Click(object sender, EventArgs e)
         {
             knowledgeBase.domains.Add(domain);
+            
         }
     }
 }
