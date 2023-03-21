@@ -67,7 +67,7 @@
             this.varDomain = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpDomens = new System.Windows.Forms.TabPage();
             this.gbDomain = new System.Windows.Forms.GroupBox();
-            this.lvVarOrDomain = new System.Windows.Forms.ListView();
+            this.lvDomains = new System.Windows.Forms.ListView();
             this.gbEdit = new System.Windows.Forms.GroupBox();
             this.btnDomainDelete = new System.Windows.Forms.Button();
             this.btnDomainChange = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1188, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1188, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -111,43 +111,44 @@
             this.сохранитьКакToolStripMenuItem,
             this.toolStripSeparator1,
             this.выходToolStripMenuItem});
+            this.файлToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(50, 21);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // новыйToolStripMenuItem
             // 
             this.новыйToolStripMenuItem.Name = "новыйToolStripMenuItem";
-            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.новыйToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.новыйToolStripMenuItem.Text = "Новый";
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             // 
             // сохранитьКакToolStripMenuItem
             // 
             this.сохранитьКакToolStripMenuItem.Name = "сохранитьКакToolStripMenuItem";
-            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.сохранитьКакToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.сохранитьКакToolStripMenuItem.Text = "Сохранить как";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(151, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             // 
             // консультацяToolStripMenuItem
@@ -155,21 +156,22 @@
             this.консультацяToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.начатьКонсультациюToolStripMenuItem,
             this.показатьОбъяснениеToolStripMenuItem});
+            this.консультацяToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.консультацяToolStripMenuItem.Name = "консультацяToolStripMenuItem";
-            this.консультацяToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.консультацяToolStripMenuItem.Size = new System.Drawing.Size(102, 21);
             this.консультацяToolStripMenuItem.Text = "Консультация";
             // 
             // начатьКонсультациюToolStripMenuItem
             // 
             this.начатьКонсультациюToolStripMenuItem.Name = "начатьКонсультациюToolStripMenuItem";
-            this.начатьКонсультациюToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.начатьКонсультациюToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.начатьКонсультациюToolStripMenuItem.Text = "Начать консультацию";
             this.начатьКонсультациюToolStripMenuItem.Click += new System.EventHandler(this.начатьКонсультациюToolStripMenuItem_Click);
             // 
             // показатьОбъяснениеToolStripMenuItem
             // 
             this.показатьОбъяснениеToolStripMenuItem.Name = "показатьОбъяснениеToolStripMenuItem";
-            this.показатьОбъяснениеToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.показатьОбъяснениеToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.показатьОбъяснениеToolStripMenuItem.Text = "Показать объяснение";
             this.показатьОбъяснениеToolStripMenuItem.Click += new System.EventHandler(this.показатьОбъяснениеToolStripMenuItem_Click);
             // 
@@ -179,10 +181,11 @@
             this.tabControl.Controls.Add(this.tpVars);
             this.tabControl.Controls.Add(this.tpDomens);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tabControl.Location = new System.Drawing.Point(0, 24);
+            this.tabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tabControl.Location = new System.Drawing.Point(0, 25);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(1176, 680);
+            this.tabControl.Size = new System.Drawing.Size(1176, 679);
             this.tabControl.TabIndex = 1;
             this.tabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl_SelectedIndexChanged);
             // 
@@ -192,10 +195,10 @@
             this.tpRools.Controls.Add(this.gbConclusion);
             this.tpRools.Controls.Add(this.gbPackage);
             this.tpRools.Controls.Add(this.lvRules);
-            this.tpRools.Location = new System.Drawing.Point(4, 22);
+            this.tpRools.Location = new System.Drawing.Point(4, 25);
             this.tpRools.Name = "tpRools";
             this.tpRools.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRools.Size = new System.Drawing.Size(1168, 654);
+            this.tpRools.Size = new System.Drawing.Size(1168, 650);
             this.tpRools.TabIndex = 0;
             this.tpRools.Text = "Правила";
             this.tpRools.UseVisualStyleBackColor = true;
@@ -217,9 +220,9 @@
             // btnDeleteRule
             // 
             this.btnDeleteRule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeleteRule.Location = new System.Drawing.Point(10, 69);
+            this.btnDeleteRule.Location = new System.Drawing.Point(10, 83);
             this.btnDeleteRule.Name = "btnDeleteRule";
-            this.btnDeleteRule.Size = new System.Drawing.Size(389, 23);
+            this.btnDeleteRule.Size = new System.Drawing.Size(389, 24);
             this.btnDeleteRule.TabIndex = 2;
             this.btnDeleteRule.Text = "Удалить";
             this.btnDeleteRule.UseVisualStyleBackColor = true;
@@ -227,9 +230,9 @@
             // btnChangeRule
             // 
             this.btnChangeRule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChangeRule.Location = new System.Drawing.Point(10, 46);
+            this.btnChangeRule.Location = new System.Drawing.Point(10, 54);
             this.btnChangeRule.Name = "btnChangeRule";
-            this.btnChangeRule.Size = new System.Drawing.Size(389, 23);
+            this.btnChangeRule.Size = new System.Drawing.Size(389, 29);
             this.btnChangeRule.TabIndex = 1;
             this.btnChangeRule.Text = "Изменить";
             this.btnChangeRule.UseVisualStyleBackColor = true;
@@ -238,9 +241,9 @@
             // btnAddRule
             // 
             this.btnAddRule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddRule.Location = new System.Drawing.Point(10, 23);
+            this.btnAddRule.Location = new System.Drawing.Point(10, 26);
             this.btnAddRule.Name = "btnAddRule";
-            this.btnAddRule.Size = new System.Drawing.Size(389, 23);
+            this.btnAddRule.Size = new System.Drawing.Size(389, 28);
             this.btnAddRule.TabIndex = 0;
             this.btnAddRule.Text = "Добавить";
             this.btnAddRule.UseVisualStyleBackColor = true;
@@ -259,10 +262,11 @@
             // listView1
             // 
             this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(3, 16);
+            this.listView1.Location = new System.Drawing.Point(3, 19);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(400, 281);
+            this.listView1.Size = new System.Drawing.Size(400, 278);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
@@ -279,10 +283,11 @@
             // listView2
             // 
             this.listView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView2.FullRowSelect = true;
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(3, 16);
+            this.listView2.Location = new System.Drawing.Point(3, 19);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(403, 208);
+            this.listView2.Size = new System.Drawing.Size(403, 205);
             this.listView2.TabIndex = 0;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
@@ -292,10 +297,12 @@
             this.ruleName,
             this.Description});
             this.lvRules.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lvRules.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvRules.FullRowSelect = true;
             this.lvRules.HideSelection = false;
             this.lvRules.Location = new System.Drawing.Point(3, 3);
             this.lvRules.Name = "lvRules";
-            this.lvRules.Size = new System.Drawing.Size(739, 648);
+            this.lvRules.Size = new System.Drawing.Size(739, 644);
             this.lvRules.TabIndex = 0;
             this.lvRules.UseCompatibleStateImageBehavior = false;
             this.lvRules.View = System.Windows.Forms.View.Details;
@@ -317,10 +324,10 @@
             this.tpVars.Controls.Add(this.gbVarValue);
             this.tpVars.Controls.Add(this.gbQuestionText);
             this.tpVars.Controls.Add(this.lvVars);
-            this.tpVars.Location = new System.Drawing.Point(4, 22);
+            this.tpVars.Location = new System.Drawing.Point(4, 25);
             this.tpVars.Name = "tpVars";
             this.tpVars.Padding = new System.Windows.Forms.Padding(3);
-            this.tpVars.Size = new System.Drawing.Size(1168, 654);
+            this.tpVars.Size = new System.Drawing.Size(1168, 650);
             this.tpVars.TabIndex = 1;
             this.tpVars.Text = "Переменные";
             this.tpVars.UseVisualStyleBackColor = true;
@@ -342,9 +349,9 @@
             // btnDeleteVar
             // 
             this.btnDeleteVar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDeleteVar.Location = new System.Drawing.Point(10, 69);
+            this.btnDeleteVar.Location = new System.Drawing.Point(10, 82);
             this.btnDeleteVar.Name = "btnDeleteVar";
-            this.btnDeleteVar.Size = new System.Drawing.Size(389, 23);
+            this.btnDeleteVar.Size = new System.Drawing.Size(389, 25);
             this.btnDeleteVar.TabIndex = 2;
             this.btnDeleteVar.Text = "Удалить";
             this.btnDeleteVar.UseVisualStyleBackColor = true;
@@ -352,9 +359,9 @@
             // btnChangeVar
             // 
             this.btnChangeVar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChangeVar.Location = new System.Drawing.Point(10, 46);
+            this.btnChangeVar.Location = new System.Drawing.Point(10, 53);
             this.btnChangeVar.Name = "btnChangeVar";
-            this.btnChangeVar.Size = new System.Drawing.Size(389, 23);
+            this.btnChangeVar.Size = new System.Drawing.Size(389, 29);
             this.btnChangeVar.TabIndex = 1;
             this.btnChangeVar.Text = "Изменить";
             this.btnChangeVar.UseVisualStyleBackColor = true;
@@ -363,9 +370,9 @@
             // btnVarAdd
             // 
             this.btnVarAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVarAdd.Location = new System.Drawing.Point(10, 23);
+            this.btnVarAdd.Location = new System.Drawing.Point(10, 26);
             this.btnVarAdd.Name = "btnVarAdd";
-            this.btnVarAdd.Size = new System.Drawing.Size(389, 23);
+            this.btnVarAdd.Size = new System.Drawing.Size(389, 27);
             this.btnVarAdd.TabIndex = 0;
             this.btnVarAdd.Text = "Добавить";
             this.btnVarAdd.UseVisualStyleBackColor = true;
@@ -384,10 +391,11 @@
             // lvConclusion
             // 
             this.lvConclusion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvConclusion.FullRowSelect = true;
             this.lvConclusion.HideSelection = false;
-            this.lvConclusion.Location = new System.Drawing.Point(3, 16);
+            this.lvConclusion.Location = new System.Drawing.Point(3, 19);
             this.lvConclusion.Name = "lvConclusion";
-            this.lvConclusion.Size = new System.Drawing.Size(400, 281);
+            this.lvConclusion.Size = new System.Drawing.Size(400, 278);
             this.lvConclusion.TabIndex = 0;
             this.lvConclusion.UseCompatibleStateImageBehavior = false;
             // 
@@ -404,10 +412,11 @@
             // lvPkg
             // 
             this.lvPkg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvPkg.FullRowSelect = true;
             this.lvPkg.HideSelection = false;
-            this.lvPkg.Location = new System.Drawing.Point(3, 16);
+            this.lvPkg.Location = new System.Drawing.Point(3, 19);
             this.lvPkg.Name = "lvPkg";
-            this.lvPkg.Size = new System.Drawing.Size(403, 208);
+            this.lvPkg.Size = new System.Drawing.Size(403, 205);
             this.lvPkg.TabIndex = 0;
             this.lvPkg.UseCompatibleStateImageBehavior = false;
             // 
@@ -417,6 +426,8 @@
             this.varName,
             this.varType,
             this.varDomain});
+            this.lvVars.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvVars.FullRowSelect = true;
             this.lvVars.HideSelection = false;
             this.lvVars.Location = new System.Drawing.Point(3, 3);
             this.lvVars.Name = "lvVars";
@@ -446,16 +457,16 @@
             this.tpDomens.Controls.Add(this.gbDomain);
             this.tpDomens.Controls.Add(this.gbEdit);
             this.tpDomens.Controls.Add(this.lvDomain);
-            this.tpDomens.Location = new System.Drawing.Point(4, 22);
+            this.tpDomens.Location = new System.Drawing.Point(4, 25);
             this.tpDomens.Name = "tpDomens";
-            this.tpDomens.Size = new System.Drawing.Size(1168, 654);
+            this.tpDomens.Size = new System.Drawing.Size(1168, 650);
             this.tpDomens.TabIndex = 2;
             this.tpDomens.Text = "Домены";
             this.tpDomens.UseVisualStyleBackColor = true;
             // 
             // gbDomain
             // 
-            this.gbDomain.Controls.Add(this.lvVarOrDomain);
+            this.gbDomain.Controls.Add(this.lvDomains);
             this.gbDomain.Location = new System.Drawing.Point(751, 113);
             this.gbDomain.Name = "gbDomain";
             this.gbDomain.Size = new System.Drawing.Size(408, 533);
@@ -463,15 +474,17 @@
             this.gbDomain.TabStop = false;
             this.gbDomain.Text = "Значение домена";
             // 
-            // lvVarOrDomain
+            // lvDomains
             // 
-            this.lvVarOrDomain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvVarOrDomain.HideSelection = false;
-            this.lvVarOrDomain.Location = new System.Drawing.Point(3, 16);
-            this.lvVarOrDomain.Name = "lvVarOrDomain";
-            this.lvVarOrDomain.Size = new System.Drawing.Size(402, 514);
-            this.lvVarOrDomain.TabIndex = 0;
-            this.lvVarOrDomain.UseCompatibleStateImageBehavior = false;
+            this.lvDomains.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDomains.FullRowSelect = true;
+            this.lvDomains.HideSelection = false;
+            this.lvDomains.Location = new System.Drawing.Point(3, 19);
+            this.lvDomains.Name = "lvDomains";
+            this.lvDomains.Size = new System.Drawing.Size(402, 511);
+            this.lvDomains.TabIndex = 0;
+            this.lvDomains.UseCompatibleStateImageBehavior = false;
+            this.lvDomains.View = System.Windows.Forms.View.List;
             // 
             // gbEdit
             // 
@@ -490,9 +503,9 @@
             // btnDomainDelete
             // 
             this.btnDomainDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDomainDelete.Location = new System.Drawing.Point(10, 69);
+            this.btnDomainDelete.Location = new System.Drawing.Point(10, 78);
             this.btnDomainDelete.Name = "btnDomainDelete";
-            this.btnDomainDelete.Size = new System.Drawing.Size(389, 23);
+            this.btnDomainDelete.Size = new System.Drawing.Size(389, 28);
             this.btnDomainDelete.TabIndex = 2;
             this.btnDomainDelete.Text = "Удалить";
             this.btnDomainDelete.UseVisualStyleBackColor = true;
@@ -500,9 +513,9 @@
             // btnDomainChange
             // 
             this.btnDomainChange.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDomainChange.Location = new System.Drawing.Point(10, 46);
+            this.btnDomainChange.Location = new System.Drawing.Point(10, 54);
             this.btnDomainChange.Name = "btnDomainChange";
-            this.btnDomainChange.Size = new System.Drawing.Size(389, 23);
+            this.btnDomainChange.Size = new System.Drawing.Size(389, 24);
             this.btnDomainChange.TabIndex = 1;
             this.btnDomainChange.Text = "Изменить";
             this.btnDomainChange.UseVisualStyleBackColor = true;
@@ -511,9 +524,9 @@
             // btnDomainAdd
             // 
             this.btnDomainAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDomainAdd.Location = new System.Drawing.Point(10, 23);
+            this.btnDomainAdd.Location = new System.Drawing.Point(10, 26);
             this.btnDomainAdd.Name = "btnDomainAdd";
-            this.btnDomainAdd.Size = new System.Drawing.Size(389, 23);
+            this.btnDomainAdd.Size = new System.Drawing.Size(389, 28);
             this.btnDomainAdd.TabIndex = 0;
             this.btnDomainAdd.Text = "Добавить";
             this.btnDomainAdd.UseVisualStyleBackColor = true;
@@ -523,10 +536,12 @@
             // 
             this.lvDomain.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DomainName});
+            this.lvDomain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lvDomain.FullRowSelect = true;
             this.lvDomain.HideSelection = false;
-            this.lvDomain.Location = new System.Drawing.Point(0, 0);
+            this.lvDomain.Location = new System.Drawing.Point(0, 3);
             this.lvDomain.Name = "lvDomain";
-            this.lvDomain.Size = new System.Drawing.Size(745, 654);
+            this.lvDomain.Size = new System.Drawing.Size(745, 651);
             this.lvDomain.TabIndex = 0;
             this.lvDomain.UseCompatibleStateImageBehavior = false;
             this.lvDomain.View = System.Windows.Forms.View.Details;
@@ -535,7 +550,7 @@
             // DomainName
             // 
             this.DomainName.Text = "Имя";
-            this.DomainName.Width = 300;
+            this.DomainName.Width = 452;
             // 
             // Consultant
             // 
@@ -602,7 +617,7 @@
         private System.Windows.Forms.GroupBox gbQuestionText;
         private System.Windows.Forms.ListView lvPkg;
         private System.Windows.Forms.GroupBox gbDomain;
-        private System.Windows.Forms.ListView lvVarOrDomain;
+        private System.Windows.Forms.ListView lvDomains;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button btnDeleteRule;
         private System.Windows.Forms.Button btnChangeRule;

@@ -22,6 +22,7 @@ namespace Consultant
             btnDeleteVar.Enabled = false;
             btnDomainChange.Enabled = false;
             btnDomainDelete.Enabled = false;
+            lvDomains.Items.Clear();
         }
 
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
@@ -43,8 +44,13 @@ namespace Consultant
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0], expertSystemShell.knowledgeBase);
+            CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0], lvDomain.SelectedItems[0].Text, expertSystemShell.knowledgeBase);
             createDomain.ShowDialog();
+            lvDomain.Items.Clear();
+            for (int i = 0; i < expertSystemShell.knowledgeBase.domains.Count(); i++)
+            {
+                lvDomain.Items.Add(expertSystemShell.knowledgeBase.domains[i].domainName);
+            }
         }
 
         private void lvRules_SelectedIndexChanged(object sender, EventArgs e)
@@ -75,22 +81,37 @@ namespace Consultant
         }
         private void lvDomain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lvRules.SelectedItems.Count != 0)
+            if (lvDomain.SelectedItems.Count != 0)
             {
                 btnDomainChange.Enabled = true;
                 btnDomainDelete.Enabled = true;
+                PrintDomainValues(lvDomain.SelectedItems[0].Text);
             }
             else
             {
                 btnDomainChange.Enabled = false;
                 btnDomainDelete.Enabled = false;
+                lvDomains.Items.Clear();
+            }
+        }
+        private void PrintDomainValues(string domainName)
+        {
+            Domain domain = expertSystemShell.knowledgeBase.domains.Find(x=>x.domainName==domainName);
+            foreach (DomainValue dv in domain.value)
+            {
+                lvDomains.Items.Add(dv.value);
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            CreateDomain createDomain = new CreateDomain(-1, expertSystemShell.knowledgeBase);
+            CreateDomain createDomain = new CreateDomain(-1, "", expertSystemShell.knowledgeBase);
             createDomain.ShowDialog();
+            lvDomain.Items.Clear();
+            for (int i = 0; i < expertSystemShell.knowledgeBase.domains.Count(); i++)
+            {
+                lvDomain.Items.Add(expertSystemShell.knowledgeBase.domains[i].domainName);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

@@ -34,8 +34,8 @@
             this.lvDomainsValue = new System.Windows.Forms.ListView();
             this.button1 = new System.Windows.Forms.Button();
             this.tbValue = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnCreate = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -75,6 +75,7 @@
             this.lvDomainsValue.TabIndex = 7;
             this.lvDomainsValue.UseCompatibleStateImageBehavior = false;
             this.lvDomainsValue.View = System.Windows.Forms.View.List;
+            this.lvDomainsValue.SelectedIndexChanged += new System.EventHandler(this.lvDomainsValue_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -93,24 +94,25 @@
             this.tbValue.Size = new System.Drawing.Size(317, 20);
             this.tbValue.TabIndex = 9;
             // 
-            // button8
+            // btnChange
             // 
-            this.button8.Location = new System.Drawing.Point(415, 255);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Изменить";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnChange.Location = new System.Drawing.Point(415, 255);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(75, 23);
+            this.btnChange.TabIndex = 18;
+            this.btnChange.Text = "Изменить";
+            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
-            // button7
+            // btnCreate
             // 
-            this.button7.Location = new System.Drawing.Point(334, 255);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Добавить";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnCreate.Location = new System.Drawing.Point(334, 255);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreate.TabIndex = 17;
+            this.btnCreate.Text = "Добавить";
+            this.btnCreate.UseVisualStyleBackColor = true;
+            this.btnCreate.Click += new System.EventHandler(this.button7_Click);
             // 
             // button2
             // 
@@ -120,6 +122,7 @@
             this.button2.TabIndex = 20;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -138,8 +141,8 @@
             this.ClientSize = new System.Drawing.Size(503, 324);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnChange);
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.tbValue);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lvDomainsValue);
@@ -162,8 +165,8 @@
         private System.Windows.Forms.ListView lvDomainsValue;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox tbValue;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
     }

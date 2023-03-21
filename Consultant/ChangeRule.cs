@@ -62,6 +62,7 @@ namespace Consultant
             }
         }
 
+
         private void btnAddPackage_Click(object sender, EventArgs e)
         {
             CreateFact createFact = new CreateFact(-1, knowledgeBase);

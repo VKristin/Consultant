@@ -29,7 +29,7 @@ namespace Consultant
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateDomain createDomain = new CreateDomain(-1, knowledgeBase);
+            CreateDomain createDomain = new CreateDomain(-1, "", knowledgeBase);
             createDomain.ShowDialog();
         }
         private string CreateVarName(List<Var> vars)
