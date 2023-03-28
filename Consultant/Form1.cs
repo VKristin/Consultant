@@ -136,5 +136,14 @@ namespace Consultant
             CreateVar createVar = new CreateVar(lvVars.SelectedIndices[0], expertSystemShell.knowledgeBase);
             createVar.ShowDialog();
         }
+
+        private void btnDomainDelete_Click(object sender, EventArgs e)
+        {
+            expertSystemShell.knowledgeBase.domains.RemoveAll(x=> x.domainName == lvDomain.SelectedItems[0].Text); lvDomain.Items.Clear();
+            for (int i = 0; i < expertSystemShell.knowledgeBase.domains.Count(); i++)
+            {
+                lvDomain.Items.Add(expertSystemShell.knowledgeBase.domains[i].domainName);
+            }
+        }
     }
 }

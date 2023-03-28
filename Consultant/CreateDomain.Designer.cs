@@ -32,7 +32,7 @@
             this.tbDomainName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lvDomainsValue = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDeleteDomainValue = new System.Windows.Forms.Button();
             this.tbValue = new System.Windows.Forms.TextBox();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -67,6 +67,8 @@
             // 
             // lvDomainsValue
             // 
+            this.lvDomainsValue.AllowDrop = true;
+            this.lvDomainsValue.FullRowSelect = true;
             this.lvDomainsValue.HideSelection = false;
             this.lvDomainsValue.Location = new System.Drawing.Point(11, 96);
             this.lvDomainsValue.Margin = new System.Windows.Forms.Padding(0);
@@ -75,17 +77,23 @@
             this.lvDomainsValue.TabIndex = 7;
             this.lvDomainsValue.UseCompatibleStateImageBehavior = false;
             this.lvDomainsValue.View = System.Windows.Forms.View.List;
+            this.lvDomainsValue.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.lvDomainsValue_ItemDrag);
             this.lvDomainsValue.SelectedIndexChanged += new System.EventHandler(this.lvDomainsValue_SelectedIndexChanged);
+            this.lvDomainsValue.DragDrop += new System.Windows.Forms.DragEventHandler(this.lvDomainsValue_DragDrop);
+            this.lvDomainsValue.DragEnter += new System.Windows.Forms.DragEventHandler(this.lvDomainsValue_DragEnter);
+            this.lvDomainsValue.DragOver += new System.Windows.Forms.DragEventHandler(this.lvDomainsValue_DragOver);
+            this.lvDomainsValue.DragLeave += new System.EventHandler(this.lvDomainsValue_DragLeave);
             // 
-            // button1
+            // btnDeleteDomainValue
             // 
-            this.button1.Location = new System.Drawing.Point(9, 193);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(482, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Удалить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDeleteDomainValue.Location = new System.Drawing.Point(9, 193);
+            this.btnDeleteDomainValue.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDeleteDomainValue.Name = "btnDeleteDomainValue";
+            this.btnDeleteDomainValue.Size = new System.Drawing.Size(482, 23);
+            this.btnDeleteDomainValue.TabIndex = 8;
+            this.btnDeleteDomainValue.Text = "Удалить";
+            this.btnDeleteDomainValue.UseVisualStyleBackColor = true;
+            this.btnDeleteDomainValue.Click += new System.EventHandler(this.button1_Click);
             // 
             // tbValue
             // 
@@ -136,6 +144,7 @@
             // 
             // CreateDomain
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 324);
@@ -144,7 +153,7 @@
             this.Controls.Add(this.btnChange);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.tbValue);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeleteDomainValue);
             this.Controls.Add(this.lvDomainsValue);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbRuleName);
@@ -163,7 +172,7 @@
         private System.Windows.Forms.TextBox tbDomainName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListView lvDomainsValue;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDeleteDomainValue;
         private System.Windows.Forms.TextBox tbValue;
         private System.Windows.Forms.Button btnChange;
         private System.Windows.Forms.Button btnCreate;
