@@ -51,6 +51,7 @@ namespace Consultant
             {
                 lvDomain.Items.Add(expertSystemShell.knowledgeBase.domains[i].domainName);
             }
+            lvDomains.Items.Clear();
         }
 
         private void lvRules_SelectedIndexChanged(object sender, EventArgs e)

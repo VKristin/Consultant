@@ -158,9 +158,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbRuleName);
             this.Controls.Add(this.tbDomainName);
+            this.KeyPreview = true;
             this.Name = "CreateDomain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreateDomain";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CreateDomain_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

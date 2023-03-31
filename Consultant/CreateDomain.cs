@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Consultant
@@ -57,6 +58,12 @@ namespace Consultant
         }
 
         private void button7_Click(object sender, EventArgs e)
+        {
+            AddValue();
+        }
+
+
+        private void AddValue()
         {
             if (tbValue.Text == "")
             {
@@ -209,8 +216,28 @@ namespace Consultant
 
             // Remove the original copy of the dragged item.
             lvDomainsValue.Items.Remove(draggedItem);
+
+            for (int i = 0; i < domain.value.Count(); i++)
+            {
+                if (domain.value[i].value != lvDomainsValue.Items[i].Text)
+                {
+                    int idx = FindIdx(domain.value[i].value);
+                    var v = domain.value[i];
+                    domain.value.RemoveAt(i);
+                    domain.value.Insert(idx, v);
+                }
+            }
         }
 
+        private int FindIdx(string val)
+        {
+            for (int i = 0; i < lvDomainsValue.Items.Count; i++)
+            {
+                if (lvDomainsValue.Items[i].Text == val)
+                    return i;
+            }
+            return -1;
+        }
         // Sorts ListViewItem objects by index.
         private class ListViewIndexComparer : System.Collections.IComparer
         {
@@ -227,6 +254,14 @@ namespace Consultant
             for (int i = 0; i < domain.value.Count(); i++)
             {
                 lvDomainsValue.Items.Add(domain.value[i].value);
+            }
+        }
+
+        private void CreateDomain_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AddValue();
             }
         }
     }
