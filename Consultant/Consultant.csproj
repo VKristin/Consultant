@@ -71,6 +71,12 @@
     <Compile Include="CreateFact.Designer.cs">
       <DependentUpon>CreateFact.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewKnowledgeBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewKnowledgeBase.Designer.cs">
+      <DependentUpon>CreateNewKnowledgeBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateVar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateFact.resx">
       <DependentUpon>CreateFact.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewKnowledgeBase.resx">
+      <DependentUpon>CreateNewKnowledgeBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateVar.resx">
       <DependentUpon>CreateVar.cs</DependentUpon>

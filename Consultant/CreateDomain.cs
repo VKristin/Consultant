@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,8 @@ namespace Consultant
             else
             {
                 tbDomainName.Text = domainName;
-                domain = knowledgeBase.domains.Find(x => x.domainName == domainName);
+                Domain d = knowledgeBase.domains.Find(x => x.domainName == domainName);
+                domain = new Domain(d.domainName, new List<DomainValue>(d.value));
                 FillValues();
             }
         }
@@ -91,6 +93,11 @@ namespace Consultant
                 MessageBox.Show("Имя домена не может быть пустым.", "Ошибка!");
                 return;
             }
+            if (lvDomainsValue.Items.Count == 0)
+            {
+                MessageBox.Show("У домена должны быть значения.", "Ошибка!");
+                return;
+            }
             if (mode == -1)
             {
                 if (knowledgeBase.domains.Find(x => x.domainName == tbDomainName.Text) == null)
@@ -106,7 +113,8 @@ namespace Consultant
             }
             else
             {
-                knowledgeBase.domains[mode].domainName=tbDomainName.Text;
+                domain.domainName = tbDomainName.Text;
+                knowledgeBase.domains[mode] = domain;
                 this.Close();
             }
         }
@@ -188,45 +196,28 @@ namespace Consultant
         // Moves the item to the location of the insertion mark.
         private void lvDomainsValue_DragDrop(object sender, DragEventArgs e)
         {
-            // Retrieve the index of the insertion mark;
             int targetIndex = lvDomainsValue.InsertionMark.Index;
 
-            // If the insertion mark is not visible, exit the method.
             if (targetIndex == -1)
             {
                 return;
             }
-
-            // If the insertion mark is to the right of the item with
-            // the corresponding index, increment the target index.
             if (lvDomainsValue.InsertionMark.AppearsAfterItem)
             {
                 targetIndex++;
             }
-
-            // Retrieve the dragged item.
             ListViewItem draggedItem =
                 (ListViewItem)e.Data.GetData(typeof(ListViewItem));
-
-            // Insert a copy of the dragged item at the target index.
-            // A copy must be inserted before the original item is removed
-            // to preserve item index values. 
+            var value = domain.value.Find(x => x.value == draggedItem.Text);
+            lvDomainsValue.Items.Remove(draggedItem);
+            domain.value.Remove(value); 
             lvDomainsValue.Items.Insert(
                 targetIndex, (ListViewItem)draggedItem.Clone());
 
-            // Remove the original copy of the dragged item.
-            lvDomainsValue.Items.Remove(draggedItem);
+            domain.value.Insert(targetIndex, value);
 
-            for (int i = 0; i < domain.value.Count(); i++)
-            {
-                if (domain.value[i].value != lvDomainsValue.Items[i].Text)
-                {
-                    int idx = FindIdx(domain.value[i].value);
-                    var v = domain.value[i];
-                    domain.value.RemoveAt(i);
-                    domain.value.Insert(idx, v);
-                }
-            }
+
+            lvDomainsValue.SelectedItems.Clear();
         }
 
         private int FindIdx(string val)

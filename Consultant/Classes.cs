@@ -6,20 +6,37 @@ using System.Threading.Tasks;
 
 namespace Consultant
 {
-    enum VarType
+    [Serializable]
+    public enum VarType
     {
         Requested,
         Inferred,
         InferredRequested
     }
 
+    [Serializable]
     public class Rule //правила
     {
         public string ruleName;
-        List<Fact> facts; //посылка
-        Fact conclusion; //заключение
-        string ruleDescription; //reason
+        public List<Fact> facts; //посылка
+        public Fact conclusion; //заключение
+        public string ruleDescription; //reason
+
+        public Rule()
+        {
+            facts = new List<Fact>();
+            conclusion = new Fact();
+        }
+
+        public Rule(string ruleName, List<Fact> facts, Fact conclusion, string ruleDescription)
+        {
+            this.ruleName = ruleName;
+            this.facts = facts;
+            this.conclusion = conclusion;
+            this.ruleDescription = ruleDescription;
+        }
     }
+    [Serializable]
     public class Domain //домен
     {
         public string domainName;
@@ -29,20 +46,44 @@ namespace Consultant
         {
             value = new List<DomainValue>();
         }
+        public Domain (string domainName, List<DomainValue> value)
+        {
+            this.domainName = domainName;
+            this.value = value;
+        }
     }
+    [Serializable]
     public class Var //переменная
     {
         public string varName;
-        Domain varDomain;
-        //добавить вопрос для запрашиваемой перменной
-        string question;
-        VarType varType;
+        public Domain varDomain;
+        public string question;
+        public VarType varType;
+
+        public Var() { }
+
+        public Var(string varName, Domain varDomain, string question, VarType varType)
+        {
+            this.varName = varName;
+            this.varDomain = varDomain;
+            this.question = question;
+            this.varType = varType;
+        }
     }
+    [Serializable]
     public class Fact //факт посылки или заключение
     {
-        Var var;
-        int value; //подумать над типом
+        public Var var;
+        public DomainValue value; //подумать над типом
+
+        public Fact() { }
+        public Fact(Var var, DomainValue domainValue)
+        {
+            this.var = var;
+            this.value = domainValue;
+        }
     }
+    [Serializable]
     public class KnowledgeBase //база знаний
     {
         public string baseName;
@@ -71,6 +112,7 @@ namespace Consultant
             goal = new Var();
         }
     }
+    [Serializable]
     public class DomainValue
     {
         public string value;
@@ -79,6 +121,7 @@ namespace Consultant
     {
         public MLV() { }
     }
+
     public class ExpertSystemShell
     {
         public KnowledgeBase knowledgeBase;

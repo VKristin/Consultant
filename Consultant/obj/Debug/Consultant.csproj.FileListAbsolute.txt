@@ -32,3 +32,4 @@ C:\Users\User\Desktop\Учёба\4 курс\ИСПБЗ\Consultant\Consultant\obj
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateDomain.resources
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateFact.resources
 D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateVar.resources
+D:\User\Desktop\Учёба\4 курс\2 трим\ИСПБЗ\Consultant\Consultant\obj\Debug\Consultant.CreateNewKnowledgeBase.resources

@@ -38,6 +38,7 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.chDomainValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lbRuleName
@@ -68,12 +69,14 @@
             // lvDomainsValue
             // 
             this.lvDomainsValue.AllowDrop = true;
+            this.lvDomainsValue.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.chDomainValue});
             this.lvDomainsValue.FullRowSelect = true;
             this.lvDomainsValue.HideSelection = false;
             this.lvDomainsValue.Location = new System.Drawing.Point(11, 96);
             this.lvDomainsValue.Margin = new System.Windows.Forms.Padding(0);
             this.lvDomainsValue.Name = "lvDomainsValue";
-            this.lvDomainsValue.Size = new System.Drawing.Size(480, 97);
+            this.lvDomainsValue.Size = new System.Drawing.Size(480, 165);
             this.lvDomainsValue.TabIndex = 7;
             this.lvDomainsValue.UseCompatibleStateImageBehavior = false;
             this.lvDomainsValue.View = System.Windows.Forms.View.List;
@@ -86,7 +89,7 @@
             // 
             // btnDeleteDomainValue
             // 
-            this.btnDeleteDomainValue.Location = new System.Drawing.Point(9, 193);
+            this.btnDeleteDomainValue.Location = new System.Drawing.Point(9, 261);
             this.btnDeleteDomainValue.Margin = new System.Windows.Forms.Padding(0);
             this.btnDeleteDomainValue.Name = "btnDeleteDomainValue";
             this.btnDeleteDomainValue.Size = new System.Drawing.Size(482, 23);
@@ -97,14 +100,14 @@
             // 
             // tbValue
             // 
-            this.tbValue.Location = new System.Drawing.Point(11, 255);
+            this.tbValue.Location = new System.Drawing.Point(11, 323);
             this.tbValue.Name = "tbValue";
             this.tbValue.Size = new System.Drawing.Size(317, 20);
             this.tbValue.TabIndex = 9;
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(415, 255);
+            this.btnChange.Location = new System.Drawing.Point(415, 323);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(75, 23);
             this.btnChange.TabIndex = 18;
@@ -114,7 +117,7 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(334, 255);
+            this.btnCreate.Location = new System.Drawing.Point(334, 323);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(75, 23);
             this.btnCreate.TabIndex = 17;
@@ -124,7 +127,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(415, 292);
+            this.button2.Location = new System.Drawing.Point(415, 360);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 22);
             this.button2.TabIndex = 20;
@@ -134,7 +137,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(334, 292);
+            this.button3.Location = new System.Drawing.Point(334, 360);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 22);
             this.button3.TabIndex = 19;
@@ -142,12 +145,17 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // chDomainValue
+            // 
+            this.chDomainValue.Text = "Значение домена";
+            this.chDomainValue.Width = 461;
+            // 
             // CreateDomain
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 324);
+            this.ClientSize = new System.Drawing.Size(503, 394);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnChange);
@@ -180,5 +188,6 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ColumnHeader chDomainValue;
     }
 }

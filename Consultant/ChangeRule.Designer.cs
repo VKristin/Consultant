@@ -41,7 +41,7 @@
             this.lvConclusion = new System.Windows.Forms.ListView();
             this.btnAddConclusion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbDescription = new System.Windows.Forms.RichTextBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.gbPackage.SuspendLayout();
@@ -52,7 +52,7 @@
             // 
             this.tbRuleName.Location = new System.Drawing.Point(12, 45);
             this.tbRuleName.Name = "tbRuleName";
-            this.tbRuleName.Size = new System.Drawing.Size(564, 20);
+            this.tbRuleName.Size = new System.Drawing.Size(577, 20);
             this.tbRuleName.TabIndex = 0;
             // 
             // lbRuleName
@@ -85,6 +85,7 @@
             this.btnDeletePackage.TabIndex = 3;
             this.btnDeletePackage.Text = "Удалить";
             this.btnDeletePackage.UseVisualStyleBackColor = true;
+            this.btnDeletePackage.Click += new System.EventHandler(this.btnDeletePackage_Click);
             // 
             // btnChangePackage
             // 
@@ -114,6 +115,7 @@
             this.lvPackage.Size = new System.Drawing.Size(272, 151);
             this.lvPackage.TabIndex = 0;
             this.lvPackage.UseCompatibleStateImageBehavior = false;
+            this.lvPackage.View = System.Windows.Forms.View.List;
             this.lvPackage.SelectedIndexChanged += new System.EventHandler(this.lvPackage_SelectedIndexChanged);
             // 
             // gbConclusion
@@ -137,6 +139,7 @@
             this.btnDeleteConclusion.TabIndex = 6;
             this.btnDeleteConclusion.Text = "Удалить";
             this.btnDeleteConclusion.UseVisualStyleBackColor = true;
+            this.btnDeleteConclusion.Click += new System.EventHandler(this.btnDeleteConclusion_Click);
             // 
             // btnChangeConclusion
             // 
@@ -146,6 +149,7 @@
             this.btnChangeConclusion.TabIndex = 5;
             this.btnChangeConclusion.Text = "Изменить";
             this.btnChangeConclusion.UseVisualStyleBackColor = true;
+            this.btnChangeConclusion.Click += new System.EventHandler(this.btnChangeConclusion_Click);
             // 
             // lvConclusion
             // 
@@ -155,6 +159,7 @@
             this.lvConclusion.Size = new System.Drawing.Size(272, 151);
             this.lvConclusion.TabIndex = 1;
             this.lvConclusion.UseCompatibleStateImageBehavior = false;
+            this.lvConclusion.View = System.Windows.Forms.View.List;
             this.lvConclusion.SelectedIndexChanged += new System.EventHandler(this.lvConclusion_SelectedIndexChanged);
             // 
             // btnAddConclusion
@@ -176,13 +181,13 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Пояснение:";
             // 
-            // richTextBox1
+            // rtbDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 325);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(576, 57);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = "";
+            this.rtbDescription.Location = new System.Drawing.Point(12, 325);
+            this.rtbDescription.Name = "rtbDescription";
+            this.rtbDescription.Size = new System.Drawing.Size(576, 57);
+            this.rtbDescription.TabIndex = 5;
+            this.rtbDescription.Text = "";
             // 
             // button7
             // 
@@ -202,6 +207,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "Отмена";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // ChangeRule
             // 
@@ -210,7 +216,7 @@
             this.ClientSize = new System.Drawing.Size(601, 433);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtbDescription);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gbConclusion);
             this.Controls.Add(this.gbPackage);
@@ -241,7 +247,7 @@
         private System.Windows.Forms.ListView lvConclusion;
         private System.Windows.Forms.Button btnAddConclusion;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbDescription;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
     }

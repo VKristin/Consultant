@@ -13,17 +13,43 @@ namespace Consultant
     public partial class CreateVar : Form
     {
         KnowledgeBase knowledgeBase;
-        public CreateVar(int varIndex, KnowledgeBase knowledgeBase)
+        Var var;
+        string question = "";
+        int mode;
+        public CreateVar(int varIndex, string varName, KnowledgeBase knowledgeBase)
         {
             this.knowledgeBase = knowledgeBase;
             InitializeComponent();
+            FillCB();
             if (varIndex == -1)
             {
+                if (knowledgeBase.domains.Count != 0)
+                    cbDomain.SelectedIndex = 0;
+                var = new Var();
                 tbVarName.Text = CreateVarName(knowledgeBase.vars);
+                rbQuestion.Text = tbVarName.Text + '?';
             }
             else
             {
+                var = knowledgeBase.vars.Find(x => x.varName == varName);
+                tbVarName.Text = varName;
+                rbQuestion.Text = var.question;
+                cbDomain.SelectedIndex = knowledgeBase.domains.FindIndex(x => x.domainName == var.varDomain.domainName);
+                if (var.varType == VarType.Requested)
+                    rbRequested.Checked = true;
+                if (var.varType == VarType.Inferred)
+                    rbInferred.Checked = true;
+                if (var.varType == VarType.InferredRequested)
+                    rbRequestedInferred.Checked = true;
+            }
+            mode = varIndex;
+        }
 
+        private void FillCB()
+        {
+            for (int i = 0; i < knowledgeBase.domains.Count(); i++)
+            {
+                cbDomain.Items.Add(knowledgeBase.domains[i].domainName);
             }
         }
 
@@ -31,6 +57,12 @@ namespace Consultant
         {
             CreateDomain createDomain = new CreateDomain(-1, "", knowledgeBase);
             createDomain.ShowDialog();
+            cbDomain.Items.Clear();
+            FillCB();
+            if (knowledgeBase.domains.Count != 0 && cbDomain.SelectedIndex == -1)
+            {
+                cbDomain.SelectedIndex = 0;
+            }
         }
         private string CreateVarName(List<Var> vars)
         {
@@ -44,6 +76,84 @@ namespace Consultant
                 i++;
             }
             return name;
+        }
+
+        private void rb2_CheckedChanged(object sender, EventArgs e)
+        {
+            rbQuestion.Enabled = !rbInferred.Checked;
+            if (rbInferred.Checked)
+            {
+                question = rbQuestion.Text;
+                rbQuestion.Text = "";
+            }
+            else
+            {
+                if (question == "")
+                    question = tbVarName.Text + "?";
+                rbQuestion.Text = question;
+            }
+        }
+        /*
+         * Requested,
+        Inferred,
+        InferredRequested
+        */
+        private void btnSaveVar_Click(object sender, EventArgs e)
+        {
+            if (tbVarName.Text == "")
+            {
+                MessageBox.Show("Имя переменной не может быть пустым.", "Ошибка!");
+                return;
+            }
+            if (rbQuestion.Text == "" && rbQuestion.Enabled)
+            {
+                MessageBox.Show("Для заданной переменной должен быть указан вопрос.", "Ошибка!");
+                return;
+            }
+            if (cbDomain.Items.Count == 0)
+            {
+                MessageBox.Show("Отсутствует домен.", "Ошибка!");
+                return;
+            }
+            if (mode == -1)
+            {
+                if (knowledgeBase.vars.FindIndex(x => x.varName == tbVarName.Text) != -1)
+                {
+                    MessageBox.Show("Переменная с таким именем уже существует.", "Ошибка!");
+                    return;
+                }
+                Domain domain = knowledgeBase.domains.Find(x => x.domainName == cbDomain.Text);
+                VarType vt = vt = VarType.Requested;
+                if (rbRequested.Checked)
+                    vt = VarType.Requested;
+                if (rbInferred.Checked)
+                    vt = VarType.Inferred;
+                if (rbRequestedInferred.Checked)
+                    vt = VarType.InferredRequested;
+                Var v = new Var(tbVarName.Text, domain, rbQuestion.Text, vt);
+                knowledgeBase.vars.Add(v);
+            }
+            else
+            {
+                VarType vt = vt = VarType.Requested;
+                Domain domain = knowledgeBase.domains.Find(x => x.domainName == cbDomain.Text);
+                if (rbRequested.Checked)
+                    vt = VarType.Requested;
+                if (rbInferred.Checked)
+                    vt = VarType.Inferred;
+                if (rbRequestedInferred.Checked)
+                    vt = VarType.InferredRequested;
+                var.varName = tbVarName.Text;
+                var.varType = vt;
+                var.question = rbQuestion.Text;
+                var.varDomain = domain;
+            }
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
