@@ -135,10 +135,24 @@ namespace Consultant
                 }
             }
             FillDomainValueList();
+            if (cbVar.SelectedIndex != -1 && cbDomainValue.Items.Count != 0)
+            {
+                cbDomainValue.SelectedIndex = 0;
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (cbVar.SelectedIndex == -1)
+            {
+                MessageBox.Show("Необходимо выбрать переменную.", "Ошибка!");
+                return;
+            }
+            if (cbDomainValue.SelectedIndex == -1)
+            {
+                MessageBox.Show("Необходимо выбрать значение домена.", "Ошибка!");
+                return;
+            }
             if (mode == 0 && factIndex == -1)
             {
                 fact = new Fact(var, var.varDomain.value[cbDomainValue.SelectedIndex]);

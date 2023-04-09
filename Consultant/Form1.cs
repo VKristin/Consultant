@@ -40,7 +40,7 @@ namespace Consultant
 
         private void начатьКонсультациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Consultation consultation = new Consultation();
+            Consultation consultation = new Consultation(expertSystemShell);
             consultation.Show();
         }
 
