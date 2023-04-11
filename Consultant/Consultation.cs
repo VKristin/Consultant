@@ -18,9 +18,10 @@ namespace Consultant
         public Consultation(ExpertSystemShell exs)
         {
             InitializeComponent();
-            rtbDialog.Text = "Экспертная система: Выберете цель консультации.";
+            rtbDialog.Text = "Консультант: Выберете цель консультации.";
             this.exs = exs;
             knowledgeBase = exs.knowledgeBase;
+            FillGoals();
         }
 
         private void FillGoals()
@@ -30,6 +31,16 @@ namespace Consultant
             {
                 if (variable.varType == VarType.Inferred || variable.varType == VarType.InferredRequested)
                     cbAnswer.Items.Add(variable.varName);
+            }
+            if (cbAnswer.Items.Count == 0)
+                cbAnswer.SelectedIndex = 0;
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            if (cbAnswer.SelectedIndex != -1) 
+            { 
+                rtbDialog.Text += "\nВы: " + cbAnswer.Text;
             }
         }
     }

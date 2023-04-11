@@ -48,9 +48,10 @@
             // rtbDialog
             // 
             this.rtbDialog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbDialog.Enabled = false;
+            this.rtbDialog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rtbDialog.Location = new System.Drawing.Point(3, 16);
             this.rtbDialog.Name = "rtbDialog";
+            this.rtbDialog.ReadOnly = true;
             this.rtbDialog.Size = new System.Drawing.Size(420, 388);
             this.rtbDialog.TabIndex = 0;
             this.rtbDialog.Text = "";
@@ -72,6 +73,7 @@
             this.btnSend.TabIndex = 2;
             this.btnSend.Text = "Ответить";
             this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // Consultation
             // 
