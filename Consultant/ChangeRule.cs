@@ -19,9 +19,11 @@ namespace Consultant
         KnowledgeBase knowledgeBase;
         string ruleName;
         int mode;
-        public ChangeRule(int ruleIndex, string ruleName,  KnowledgeBase knowledgeBase)
+        int idx;
+        public ChangeRule(int ruleIndex, int idx, string ruleName,  KnowledgeBase knowledgeBase)
         {
             InitializeComponent();
+            this.idx = idx;
             mode = ruleIndex;
             this.ruleName = ruleName;
             this.rules = knowledgeBase.rules;
@@ -150,6 +152,10 @@ namespace Consultant
                 rule.ruleName = tbRuleName.Text;
                 rule.ruleDescription = rtbDescription.Text;
                 knowledgeBase.rules.Add(rule);
+                if (idx != -1)
+                    knowledgeBase.rules.Insert(idx+1, rule);
+                else
+                    knowledgeBase.rules.Add(rule);
             }
             else
             {

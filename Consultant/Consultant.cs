@@ -15,10 +15,10 @@ namespace Consultant
 {
     public partial class Consultant : Form
     {
-        string path;
-        ExpertSystemShell expertSystemShell = new ExpertSystemShell();
-        KnowledgeBase knowledgeBase = new KnowledgeBase();
-        
+        string path = "";
+        public ExpertSystemShell expertSystemShell = new ExpertSystemShell();
+        public KnowledgeBase knowledgeBase = new KnowledgeBase();
+
         public Consultant()
         {
             expertSystemShell.knowledgeBase = knowledgeBase;
@@ -40,13 +40,14 @@ namespace Consultant
 
         private void начатьКонсультациюToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Consultation consultation = new Consultation(expertSystemShell);
-            consultation.Show();
+
+            Consultation consultation = new Consultation(expertSystemShell, this);
+            consultation.ShowDialog();
         }
 
         private void показатьОбъяснениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Explanation explanation = new Explanation();
+            Explanation explanation = new Explanation(expertSystemShell.workingMemory);
             explanation.Show();
         }
 
@@ -140,7 +141,7 @@ namespace Consultant
         }
         private void PrintDomainValues(string domainName)
         {
-            Domain domain = knowledgeBase.domains.Find(x=>x.domainName==domainName);
+            Domain domain = knowledgeBase.domains.Find(x => x.domainName == domainName);
             foreach (DomainValue dv in domain.value)
             {
                 lvDomains.Items.Add(dv.value);
@@ -164,7 +165,8 @@ namespace Consultant
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ChangeRule changeRule = new ChangeRule(-1, "", knowledgeBase); //происходит добавление, а не редактирование
+            int idx = lvRules.SelectedIndices.Count != 0 ? lvRules.SelectedIndices[0] : -1;
+            ChangeRule changeRule = new ChangeRule(-1, idx, "", knowledgeBase); //происходит добавление, а не редактирование
             changeRule.ShowDialog();
             FillRules();
             ListViewResizeColumns(lvRules);
@@ -194,7 +196,7 @@ namespace Consultant
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ChangeRule changeRule = new ChangeRule(lvRules.SelectedIndices[0], lvRules.SelectedItems[0].Text, knowledgeBase);
+            ChangeRule changeRule = new ChangeRule(lvRules.SelectedIndices[0], -1, lvRules.SelectedItems[0].Text, knowledgeBase);
             changeRule.ShowDialog();
             FillRules();
             lvRules.SelectedIndices.Clear();
@@ -246,7 +248,7 @@ namespace Consultant
 
         private void btnDomainDelete_Click(object sender, EventArgs e)
         {
-            knowledgeBase.domains.RemoveAll(x=> x.domainName == lvDomain.SelectedItems[0].Text); lvDomain.Items.Clear();
+            knowledgeBase.domains.RemoveAll(x => x.domainName == lvDomain.SelectedItems[0].Text); lvDomain.Items.Clear();
             for (int i = 0; i < knowledgeBase.domains.Count(); i++)
             {
                 lvDomain.Items.Add(knowledgeBase.domains[i].domainName);
@@ -263,12 +265,13 @@ namespace Consultant
         private void новыйToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string name = "";
-            CreateNewKnowledgeBase newKnowledgeBase= new CreateNewKnowledgeBase(name);
+            CreateNewKnowledgeBase newKnowledgeBase = new CreateNewKnowledgeBase(name);
             newKnowledgeBase.ShowDialog();
             if (newKnowledgeBase.DialogResult == DialogResult.OK)
             {
+                tabControl.Visible = true;
                 expertSystemShell.knowledgeBase = new KnowledgeBase();
-                expertSystemShell.knowledgeBase.baseName= name;
+                expertSystemShell.knowledgeBase.baseName = name;
                 knowledgeBase = expertSystemShell.knowledgeBase;
                 FillDomains();
                 FillRules();
@@ -278,6 +281,11 @@ namespace Consultant
 
         private void сохранитьКакToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SaveAs();
+        }
+
+        private void SaveAs()
+        {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "expert system files (*.expertsystem)|*.expertsystem|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -286,6 +294,7 @@ namespace Consultant
                 using (FileStream fs = new FileStream(filename, FileMode.Create))
                     new BinaryFormatter().Serialize(fs, knowledgeBase);
             }
+
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -296,6 +305,8 @@ namespace Consultant
             {
                 string filename = openFileDialog.FileName;
                 path = filename;
+                tabControl.Visible = true;
+                expertSystemShell = new ExpertSystemShell();
                 expertSystemShell.knowledgeBase = knowledgeBase = LoadFile(filename);
                 FillDomains();
                 FillRules();
@@ -389,6 +400,11 @@ namespace Consultant
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Save();
+        }
+
+        private void Save()
+        {
             if (path != "")
             {
                 DialogResult result = MessageBox.Show("Вы уверены, что хотите сохранить изменения в открытом ранее файле?", "Осторожно!", MessageBoxButtons.YesNo);
@@ -400,20 +416,22 @@ namespace Consultant
             }
             else
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.Filter = "expert system files (*.expertsystem)|*.expertsystem|All files (*.*)|*.*";
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    string filename = saveFileDialog.FileName;
-                    using (FileStream fs = new FileStream(filename, FileMode.Create))
-                        new BinaryFormatter().Serialize(fs, knowledgeBase);
-                }
+                SaveAs();
             }
         }
+
         private void ListViewResizeColumns(ListView lv)
         {
             lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.ColumnContent);
             lv.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+        }
+
+        private void Consultant_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode == Keys.S)       // Ctrl-S Save
+            {
+                Save();
+            }
         }
     }
 }

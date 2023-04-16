@@ -35,6 +35,15 @@ namespace Consultant
             this.conclusion = conclusion;
             this.ruleDescription = ruleDescription;
         }
+        public bool CheckRule(List<Fact> facts)
+        {
+            foreach (var c in facts)
+            {
+                if (facts.Find(item => item.var.varName == c.var.varName && item.value.value == c.value.value) == null)
+                    return false;
+            }
+            return true;
+        }
     }
     [Serializable]
     public class Domain //домен
@@ -99,29 +108,17 @@ namespace Consultant
             vars= new List<Var>();
         }
     }
-    public class WorkingMemory //рабочая память
-    {
-        public List<Rule> rules;
-        public List<Var> vars;
-        public Var goal;
-
-        public WorkingMemory()
-        {
-            rules = new List<Rule>();
-            vars = new List<Var>();
-            goal = new Var();
-        }
-    }
+    
     [Serializable]
     public class DomainValue
     {
         public string value;
+        public DomainValue(string values)
+        {
+            this.value = values;
+        }
+        public DomainValue() { }
     }
-    public class MLV
-    {
-        public MLV() { }
-    }
-
     public class ExpertSystemShell
     {
         public KnowledgeBase knowledgeBase;
@@ -134,5 +131,7 @@ namespace Consultant
             workingMemory = new WorkingMemory();
             mlv = new MLV();
         }
+
     }
+
 }

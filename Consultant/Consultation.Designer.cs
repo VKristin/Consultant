@@ -32,6 +32,7 @@
             this.rtbDialog = new System.Windows.Forms.RichTextBox();
             this.cbAnswer = new System.Windows.Forms.ComboBox();
             this.btnSend = new System.Windows.Forms.Button();
+            this.llExpl = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,11 +76,23 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // llExpl
+            // 
+            this.llExpl.AutoSize = true;
+            this.llExpl.Location = new System.Drawing.Point(294, 416);
+            this.llExpl.Name = "llExpl";
+            this.llExpl.Size = new System.Drawing.Size(120, 13);
+            this.llExpl.TabIndex = 1;
+            this.llExpl.TabStop = true;
+            this.llExpl.Text = "Показать объяснение";
+            this.llExpl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llExpl_LinkClicked);
+            // 
             // Consultation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 442);
+            this.Controls.Add(this.llExpl);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.cbAnswer);
             this.Controls.Add(this.groupBox1);
@@ -88,6 +101,7 @@
             this.Text = "Консультация";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -97,5 +111,6 @@
         private System.Windows.Forms.ComboBox cbAnswer;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.RichTextBox rtbDialog;
+        private System.Windows.Forms.LinkLabel llExpl;
     }
 }
