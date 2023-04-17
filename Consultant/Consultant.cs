@@ -53,14 +53,21 @@ namespace Consultant
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0], lvDomain.SelectedItems[0].Text, expertSystemShell.knowledgeBase);
-            createDomain.ShowDialog();
-            lvDomain.Items.Clear();
-            for (int i = 0; i < knowledgeBase.domains.Count(); i++)
+            if (knowledgeBase.vars.Find(x => x.varDomain.domainName == lvDomain.SelectedItems[0].Text) == null)
             {
-                lvDomain.Items.Add(knowledgeBase.domains[i].domainName);
+                CreateDomain createDomain = new CreateDomain(lvDomain.SelectedIndices[0], lvDomain.SelectedItems[0].Text, expertSystemShell.knowledgeBase);
+                createDomain.ShowDialog();
+                lvDomain.Items.Clear();
+                for (int i = 0; i < knowledgeBase.domains.Count(); i++)
+                {
+                    lvDomain.Items.Add(knowledgeBase.domains[i].domainName);
+                }
+                lvDomains.Items.Clear();
             }
-            lvDomains.Items.Clear();
+            else
+            {
+                MessageBox.Show("Нельзя изменить данный домен, так как он связан с следующими переменными: \n" + ReturnListVars(lvDomain.SelectedItems[0].Text), "Ошибка!");
+            }
         }
 
         private void lvRules_SelectedIndexChanged(object sender, EventArgs e)
@@ -238,28 +245,91 @@ namespace Consultant
 
         private void btnChangeVar_Click(object sender, EventArgs e)
         {
-            CreateVar createVar = new CreateVar(lvVars.SelectedIndices[0], lvVars.SelectedItems[0].Text, knowledgeBase);
-            createVar.ShowDialog();
-            FillVars();
-            lvVars.SelectedIndices.Clear();
-            lvValues.Items.Clear();
-            rtbQuestion.Text = "";
+            if (ReturnListRules(lvVars.SelectedItems[0].Text) == "")
+            {
+                CreateVar createVar = new CreateVar(lvVars.SelectedIndices[0], lvVars.SelectedItems[0].Text, knowledgeBase);
+                createVar.ShowDialog();
+                FillVars();
+                lvVars.SelectedIndices.Clear();
+                lvValues.Items.Clear();
+                rtbQuestion.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Нельзя изменить данную переменную, так как она связана с следующими правилами: \n" + ReturnListRules(lvVars.SelectedItems[0].Text), "Ошибка!");
+            }
+
         }
 
         private void btnDomainDelete_Click(object sender, EventArgs e)
         {
-            knowledgeBase.domains.RemoveAll(x => x.domainName == lvDomain.SelectedItems[0].Text); lvDomain.Items.Clear();
-            for (int i = 0; i < knowledgeBase.domains.Count(); i++)
+            if (knowledgeBase.vars.Find(x => x.varDomain.domainName == lvDomain.SelectedItems[0].Text) == null)
             {
-                lvDomain.Items.Add(knowledgeBase.domains[i].domainName);
+                knowledgeBase.domains.RemoveAll(x => x.domainName == lvDomain.SelectedItems[0].Text); lvDomain.Items.Clear();
+                for (int i = 0; i < knowledgeBase.domains.Count(); i++)
+                {
+                    lvDomain.Items.Add(knowledgeBase.domains[i].domainName);
+                }
             }
+            else
+            {
+                MessageBox.Show("Нельзя удалить данный домен, так как он связан с следующими переменными: \n" + ReturnListVars(lvDomain.SelectedItems[0].Text), "Ошибка!");
+            }
+        }
+
+        private string ReturnListVars(string d)
+        {
+            string s = "";
+            foreach (Var v in knowledgeBase.vars.FindAll(x=>x.varDomain.domainName == d))
+            {
+                if (v.varDomain.domainName == d)
+                    s += v.varName + " ";
+            }
+            return s;
+        }
+        private string ReturnListRules(string r)
+        {
+            string s = "";
+            Var v = knowledgeBase.vars.Find(x=>x.varName==r);
+            List<Rule> ruls = new List<Rule>();
+            foreach (Rule rule in knowledgeBase.rules)
+            {
+                foreach (Fact f in rule.facts)
+                {
+                    if (f.var == v)
+                    {
+                        ruls.Add(rule);
+                        break;
+                    }
+                }
+                if (rule.conclusion.var == v)
+                {
+                    if (ruls.Find(x=>x==rule) == null)
+                        ruls.Add(rule);
+                }
+            }
+            foreach (Rule ru in ruls)
+                s += ru.ruleName + " ";
+            return s;
         }
 
         private void btnDeleteVar_Click(object sender, EventArgs e)
         {
-            Var v = knowledgeBase.vars.Find(x => x.varName == lvVars.SelectedItems[0].SubItems[0].Text);
-            knowledgeBase.vars.Remove(v);
-            FillVars();
+            if (ReturnListRules(lvVars.SelectedItems[0].Text) == "")
+            {
+                knowledgeBase.domains.RemoveAll(x => x.domainName == lvDomain.SelectedItems[0].Text); lvDomain.Items.Clear();
+                for (int i = 0; i < knowledgeBase.domains.Count(); i++)
+                {
+                    lvDomain.Items.Add(knowledgeBase.domains[i].domainName);
+                }
+                Var v = knowledgeBase.vars.Find(x => x.varName == lvVars.SelectedItems[0].SubItems[0].Text);
+                knowledgeBase.vars.Remove(v);
+                FillVars();
+            }
+            else
+            {
+                MessageBox.Show("Нельзя удалить данную переменную, так как она связана с следующими правилами: \n" + ReturnListRules(lvVars.SelectedItems[0].Text), "Ошибка!");
+            }
         }
 
         private void новыйToolStripMenuItem_Click(object sender, EventArgs e)

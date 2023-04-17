@@ -16,6 +16,8 @@ namespace Consultant
         Var var;
         string question = "";
         int mode;
+        public string varName = "";
+        public VarType vt;
         public CreateVar(int varIndex, string varName, KnowledgeBase knowledgeBase)
         {
             this.knowledgeBase = knowledgeBase;
@@ -59,10 +61,17 @@ namespace Consultant
             createDomain.ShowDialog();
             cbDomain.Items.Clear();
             FillCB();
-            if (knowledgeBase.domains.Count != 0 && cbDomain.SelectedIndex == -1)
+            if (createDomain.insertId > -1)
+                cbDomain.SelectedIndex = createDomain.insertId;
+            else
             {
-                cbDomain.SelectedIndex = 0;
+                if (knowledgeBase.domains.Count != 0 && cbDomain.SelectedIndex == -1)
+                {
+                    cbDomain.SelectedIndex = 0;
+                }
             }
+            if (question == "")
+                question = tbVarName.Text + "?";
         }
         private string CreateVarName(List<Var> vars)
         {
@@ -132,6 +141,8 @@ namespace Consultant
                     vt = VarType.InferredRequested;
                 Var v = new Var(tbVarName.Text, domain, rbQuestion.Text, vt);
                 knowledgeBase.vars.Add(v);
+                vt = v.varType;
+                varName = tbVarName.Text;
             }
             else
             {

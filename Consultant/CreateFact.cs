@@ -117,10 +117,18 @@ namespace Consultant
             CreateVar createVar = new CreateVar(-1, "", knowledgeBase);
             createVar.ShowDialog();
             FillVarsList();
+            if (createVar.varName != "")
+            {
+                if (cbVar.FindStringExact(createVar.varName) != -1)
+                    cbVar.SelectedIndex = cbVar.FindStringExact(createVar.varName);
+
+                FillDomainValueList();
+            }
             if (cbVar.Items.Count != 0 && cbVar.SelectedIndex == -1)
             {
                 cbVar.SelectedIndex = 0;
                 cbDomainValue.SelectedIndex = 0;
+                FillDomainValueList();
             }
         }
 

@@ -32,13 +32,13 @@
             this.tbDomainName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lvDomainsValue = new System.Windows.Forms.ListView();
+            this.chDomainValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnDeleteDomainValue = new System.Windows.Forms.Button();
             this.tbValue = new System.Windows.Forms.TextBox();
             this.btnChange = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.chDomainValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lbRuleName
@@ -75,6 +75,7 @@
             this.lvDomainsValue.HideSelection = false;
             this.lvDomainsValue.Location = new System.Drawing.Point(11, 96);
             this.lvDomainsValue.Margin = new System.Windows.Forms.Padding(0);
+            this.lvDomainsValue.MultiSelect = false;
             this.lvDomainsValue.Name = "lvDomainsValue";
             this.lvDomainsValue.Size = new System.Drawing.Size(480, 165);
             this.lvDomainsValue.TabIndex = 7;
@@ -86,6 +87,11 @@
             this.lvDomainsValue.DragEnter += new System.Windows.Forms.DragEventHandler(this.lvDomainsValue_DragEnter);
             this.lvDomainsValue.DragOver += new System.Windows.Forms.DragEventHandler(this.lvDomainsValue_DragOver);
             this.lvDomainsValue.DragLeave += new System.EventHandler(this.lvDomainsValue_DragLeave);
+            // 
+            // chDomainValue
+            // 
+            this.chDomainValue.Text = "Значение домена";
+            this.chDomainValue.Width = 461;
             // 
             // btnDeleteDomainValue
             // 
@@ -144,11 +150,6 @@
             this.button3.Text = "ОК";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // chDomainValue
-            // 
-            this.chDomainValue.Text = "Значение домена";
-            this.chDomainValue.Width = 461;
             // 
             // CreateDomain
             // 

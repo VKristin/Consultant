@@ -18,6 +18,7 @@ namespace Consultant
         int mode;
         Domain domain = new Domain();
         KnowledgeBase knowledgeBase = new KnowledgeBase();
+        public int insertId = -1;
         public CreateDomain(int domainIndex, string domainName, KnowledgeBase knowledgeBase)
         {
             mode = domainIndex;
@@ -104,6 +105,7 @@ namespace Consultant
                 {
                     domain.domainName = tbDomainName.Text;
                     knowledgeBase.domains.Add(domain);
+                    insertId = knowledgeBase.domains.Count() - 1;
                     this.Close();
                 }
                 else
